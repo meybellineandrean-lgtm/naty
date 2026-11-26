@@ -4,626 +4,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f8dce8">
+<meta name="theme-color" content="#f9e5ef">
 <title>ALENA | La Magia de Transformar</title>
-
+<meta name="description" content="ALENA: detalles artesanales hechos con amor. Flores, ramos, llaveros, cuadros y regalos personalizados.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --pink:#f6c5d5;
-  --pink-dark:#d979a0;
-  --pink-light:#fff1f6;
-  --lilac:#e6dafa;
-  --turquoise:#c9eeeb;
+  --pink:#e9a9c5;
+  --pink-dark:#bd6f98;
+  --pink-light:#fff0f6;
+  --lilac:#d9c8f2;
+  --turquoise:#bce9e5;
   --cream:#fffaf7;
-  --text:#493b49;
-  --muted:#897987;
+  --text:#514451;
   --white:#fff;
-  --shadow:0 12px 35px rgba(139,91,119,.12);
+  --shadow:0 8px 25px rgba(130,85,115,.12);
 }
-
-* { box-sizing:border-box; margin:0; padding:0; }
-
-html { scroll-behavior:smooth; }
-
-body {
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
   font-family:'DM Sans',sans-serif;
   color:var(--text);
   background:var(--cream);
+  line-height:1.6;
 }
-
-button,input,textarea { font:inherit; }
-button { cursor:pointer; }
-a { color:inherit; text-decoration:none; }
-
-header {
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(255,250,247,.95);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid #f5e5eb;
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1150px,92%);margin:auto}
+header{
+  background:rgba(255,250,247,.96);
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 2px 15px rgba(0,0,0,.06);
 }
-
-.nav {
-  max-width:1200px;
-  margin:auto;
-  padding:12px 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+.nav{
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:15px;
 }
-
-.brand {
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.brand img {
-  width:58px;
-  height:58px;
-  object-fit:contain;
-  border-radius:50%;
-  background:white;
-}
-
-.brand-name {
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:55px;height:55px;object-fit:contain;border-radius:50%}
+.brand strong{
   font-family:'Playfair Display',serif;
-  font-size:1.65rem;
-  font-weight:800;
-  color:#b95f89;
+  font-size:27px;color:var(--pink-dark);letter-spacing:2px;
 }
-
-.brand-tag {
-  font-size:.72rem;
-  color:var(--muted);
-  letter-spacing:1px;
+.brand small{display:block;font-size:10px;letter-spacing:1px}
+nav{display:flex;align-items:center;gap:22px}
+nav a{font-size:14px;font-weight:700}
+nav a:hover{color:var(--pink-dark)}
+.cart-button,.primary-button{
+  border:0;border-radius:30px;padding:11px 18px;
+  background:var(--pink-dark);color:white;font-weight:700;
 }
-
-.nav-links {
-  display:flex;
-  align-items:center;
-  gap:22px;
-  font-size:.92rem;
-  font-weight:700;
+.cart-button:hover,.primary-button:hover{filter:brightness(.94)}
+.menu-button{
+  display:none;background:var(--pink-light);border:0;
+  padding:9px 12px;border-radius:10px;font-size:20px;
 }
-
-.nav-links a:hover { color:var(--pink-dark); }
-
-.cart-button,.primary-button {
-  border:0;
-  border-radius:30px;
-  background:linear-gradient(135deg,#dc8eaf,#bb82c7);
-  color:white;
-  font-weight:800;
-  padding:13px 20px;
-  box-shadow:0 7px 18px rgba(185,95,137,.2);
-  transition:.25s;
+.hero{
+  padding:75px 0;
+  background:linear-gradient(120deg,#fff0f6,#f4edff 55%,#e7f8f5);
 }
-
-.cart-button:hover,.primary-button:hover {
-  transform:translateY(-3px);
-  box-shadow:0 12px 25px rgba(185,95,137,.27);
+.hero-content{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  align-items:center;gap:45px;
 }
-
-.hero {
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 8% 15%,#fff 0 7%,transparent 8%),
-    radial-gradient(circle at 90% 80%,#fff 0 9%,transparent 10%),
-    linear-gradient(120deg,#ffe4ed,#f1e7ff 55%,#dcf6f0);
-  padding:85px 6%;
+.eyebrow{
+  color:var(--pink-dark);font-weight:800;
+  text-transform:uppercase;letter-spacing:2px;font-size:12px;
 }
-
-.hero-inner {
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  align-items:center;
-  gap:50px;
+h1,h2,h3{font-family:'Playfair Display',serif}
+.hero h1{font-size:clamp(42px,6vw,68px);line-height:1.12;margin:15px 0}
+.hero h1 span{color:var(--pink-dark)}
+.hero p{max-width:540px;margin-bottom:25px;color:#766779}
+.hero-image{
+  background:white;padding:15px;border-radius:35px;
+  box-shadow:var(--shadow);transform:rotate(2deg);
 }
-
-.eyebrow {
-  display:inline-block;
-  background:white;
-  color:#b45f88;
-  border-radius:30px;
-  padding:9px 15px;
-  font-size:.8rem;
-  font-weight:800;
-  letter-spacing:1px;
-  margin-bottom:20px;
+.hero-image img{
+  width:100%;height:360px;object-fit:cover;border-radius:25px;
 }
-
-.hero h1 {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(3rem,6vw,5.5rem);
-  line-height:1.04;
-  color:#69465e;
-  margin-bottom:20px;
+.section{padding:70px 0}
+.section-heading{text-align:center;margin-bottom:35px}
+.section-heading h2{font-size:clamp(30px,4vw,42px);margin:7px 0}
+.section-heading p{color:#897b89}
+.categories{
+  display:flex;justify-content:center;flex-wrap:wrap;
+  gap:10px;margin-bottom:30px;
 }
-
-.hero h1 span { color:#c66f9a; }
-
-.hero p {
-  max-width:540px;
-  color:#776879;
-  line-height:1.8;
-  font-size:1.05rem;
-  margin-bottom:28px;
+.category-button{
+  border:1px solid #ead7e3;background:white;
+  color:var(--text);padding:9px 16px;border-radius:25px;
+  font-size:13px;font-weight:700;
 }
-
-.hero-art {
-  background:rgba(255,255,255,.65);
-  border:1px solid white;
-  border-radius:40px;
-  min-height:350px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:30px;
-  box-shadow:var(--shadow);
-  transform:rotate(2deg);
+.category-button.active,.category-button:hover{
+  background:var(--pink-dark);color:white;border-color:var(--pink-dark);
 }
-
-.hero-art img {
-  width:min(100%,260px);
-  max-height:230px;
-  object-fit:contain;
-}
-
-.hero-art strong {
-  font-family:'Playfair Display',serif;
-  color:#b45f88;
-  font-size:1.8rem;
-  margin-top:15px;
-}
-
-.hero-art small { color:var(--muted); margin-top:5px; }
-
-.decor {
-  position:absolute;
-  font-size:2rem;
-  opacity:.7;
-  animation:float 4s ease-in-out infinite;
-}
-
-.decor.one { top:35px; right:10%; }
-.decor.two { bottom:35px; left:5%; animation-delay:1s; }
-
-@keyframes float {
-  0%,100% { transform:translateY(0) rotate(0); }
-  50% { transform:translateY(-13px) rotate(10deg); }
-}
-
-section { padding:75px 5%; }
-.section-inner { max-width:1200px; margin:auto; }
-
-.section-heading {
-  text-align:center;
-  margin-bottom:35px;
-}
-
-.section-heading .mini,.mini {
-  color:#c16d97;
-  font-size:.78rem;
-  letter-spacing:2px;
-  font-weight:800;
-  text-transform:uppercase;
-}
-
-.section-heading h2 {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2rem,4vw,3rem);
-  color:#69465e;
-  margin:8px 0;
-}
-
-.section-heading p { color:var(--muted); }
-
-.category-list {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-  margin:0 auto 35px;
-}
-
-.category-button {
-  border:1px solid #efd5e1;
-  background:white;
-  color:#886b80;
-  padding:11px 17px;
-  border-radius:30px;
-  font-weight:700;
-  transition:.2s;
-}
-
-.category-button:hover,.category-button.active {
-  background:#d88ead;
-  border-color:#d88ead;
-  color:white;
-}
-
-.products-grid {
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+.product-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
   gap:22px;
 }
-
-.product-card {
-  background:white;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 5px 22px rgba(125,85,110,.08);
-  border:1px solid #f4e8ee;
-  transition:.3s;
-  animation:appear .45s ease both;
+.product-card{
+  background:white;border-radius:19px;overflow:hidden;
+  box-shadow:var(--shadow);transition:.2s;
 }
-
-.product-card:hover {
-  transform:translateY(-7px);
-  box-shadow:var(--shadow);
+.product-card:hover{transform:translateY(-4px)}
+.product-image{height:230px;background:#f8edf3;overflow:hidden}
+.product-image img{width:100%;height:100%;object-fit:cover}
+.product-info{padding:16px}
+.product-info h3{font-size:19px;margin-bottom:4px}
+.product-category{font-size:11px;color:var(--pink-dark);font-weight:800}
+.product-price{font-size:13px;color:#857488;margin:8px 0 13px}
+.add-button{
+  width:100%;border:0;border-radius:12px;padding:10px;
+  background:var(--pink-light);color:var(--pink-dark);font-weight:800;
 }
-
-.product-photo {
-  height:235px;
-  background:linear-gradient(135deg,#fff0f5,#f1eaff);
-  overflow:hidden;
+.add-button:hover{background:var(--pink-dark);color:white}
+.empty-message{
+  grid-column:1/-1;text-align:center;padding:35px;color:#88798b;
 }
-
-.product-photo img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .5s;
+.about{
+  background:linear-gradient(120deg,#f5efff,#eaf9f6);
 }
-
-.product-card:hover .product-photo img { transform:scale(1.06); }
-
-.product-info { padding:17px; }
-
-.product-info h3 {
-  font-family:'Playfair Display',serif;
-  font-size:1.12rem;
-  margin-bottom:7px;
+.about-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
 }
-
-.product-category {
-  color:#a17d98;
-  font-size:.76rem;
-  margin-bottom:13px;
+.about-card{
+  background:rgba(255,255,255,.85);padding:25px;
+  border-radius:20px;text-align:center;
 }
-
-.product-bottom {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px;
+.about-card .emoji{font-size:34px}
+.about-card h3{font-size:21px;margin:10px}
+.contact-box{
+  background:white;border-radius:25px;padding:35px;
+  box-shadow:var(--shadow);text-align:center;
 }
-
-.price {
-  font-size:.82rem;
-  font-weight:800;
-  color:#bd7097;
+.contact-box p{margin:10px 0 20px;color:#857488}
+.whatsapp-button{
+  display:inline-block;background:#238d63;color:white;
+  padding:12px 22px;border-radius:30px;font-weight:800;
 }
-
-.add-button {
-  border:0;
-  background:#f9e3ed;
-  color:#a9567f;
-  border-radius:25px;
-  padding:10px 13px;
-  font-weight:800;
-  font-size:.8rem;
-  transition:.2s;
+footer{
+  background:#59495b;color:white;text-align:center;padding:30px 15px;
 }
-
-.add-button:hover { background:#d88ead; color:white; }
-
-.empty-products {
-  text-align:center;
-  grid-column:1/-1;
-  padding:35px;
-  color:var(--muted);
+footer p{font-size:13px;opacity:.85}
+.overlay{
+  position:fixed;inset:0;background:rgba(30,20,30,.45);
+  z-index:200;display:none;
 }
-
-.featured {
-  background:linear-gradient(120deg,#fce5ed,#eee5fc);
+.overlay.show{display:block}
+.cart-panel{
+  position:fixed;z-index:201;right:-460px;top:0;
+  width:min(440px,100%);height:100%;
+  background:white;padding:24px;overflow-y:auto;
+  transition:right .25s;
 }
-
-.featured-box {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:35px;
-  align-items:center;
-  background:rgba(255,255,255,.7);
-  border-radius:30px;
-  padding:35px;
+.cart-panel.show{right:0}
+.cart-header{
+  display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px solid #eee;padding-bottom:15px;
 }
-
-.featured-box img {
-  width:100%;
-  max-height:360px;
-  object-fit:cover;
-  border-radius:22px;
+.cart-header h2{font-size:27px}
+.close-button{
+  border:0;background:var(--pink-light);border-radius:50%;
+  width:38px;height:38px;font-size:20px;
 }
-
-.featured-box h2 {
-  font-family:'Playfair Display',serif;
-  font-size:2.5rem;
-  color:#845776;
-  margin-bottom:15px;
+.cart-items{padding:15px 0}
+.cart-item{
+  display:grid;grid-template-columns:65px 1fr auto;
+  gap:12px;align-items:center;padding:12px 0;
+  border-bottom:1px solid #f0e8ee;
 }
-
-.featured-box p {
-  line-height:1.8;
-  color:var(--muted);
-  margin-bottom:20px;
+.cart-item img{width:65px;height:65px;object-fit:cover;border-radius:10px}
+.cart-item h3{font-size:15px}
+.cart-item small{color:#8d7d8e}
+.quantity{display:flex;align-items:center;gap:8px;margin-top:6px}
+.quantity button{
+  border:0;background:var(--pink-light);border-radius:7px;
+  width:25px;height:25px;font-weight:bold;
 }
-
-.steps {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+.remove-button{
+  border:0;background:none;color:#b66c8d;font-size:12px;
 }
-
-.step {
-  text-align:center;
-  background:white;
-  padding:28px 20px;
-  border-radius:22px;
-  box-shadow:var(--shadow);
+.cart-total{
+  display:flex;justify-content:space-between;
+  padding:15px 0;font-weight:800;border-top:1px solid #eee;
 }
-
-.step-icon {
-  width:65px;
-  height:65px;
-  margin:0 auto 15px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  font-size:1.8rem;
-  background:var(--pink-light);
+.checkout h3{font-size:23px;margin:15px 0}
+.checkout label{display:block;font-size:13px;font-weight:700;margin:10px 0 5px}
+.checkout input,.checkout textarea{
+  width:100%;padding:11px;border:1px solid #e6d9e2;
+  border-radius:10px;background:#fffafd;color:var(--text);
 }
-
-.step h3 { margin-bottom:9px; }
-.step p { color:var(--muted); line-height:1.6; font-size:.9rem; }
-
-.contact {
-  background:linear-gradient(120deg,#e4f5f1,#f7e8f2);
-  text-align:center;
+.checkout textarea{min-height:75px;resize:vertical}
+.checkout .primary-button{width:100%;margin:15px 0}
+.note{font-size:12px;color:#8d7d8e}
+.toast{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  background:#59495b;color:white;padding:12px 20px;
+  border-radius:30px;z-index:300;display:none;
+  box-shadow:var(--shadow);font-size:14px;
 }
-
-.contact h2 {
-  font-family:'Playfair Display',serif;
-  font-size:2.6rem;
-  margin:12px 0;
-  color:#69465e;
+.toast.show{display:block}
+@media(max-width:900px){
+  .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  nav{gap:12px}
 }
-
-.contact p {
-  color:#786b79;
-  margin:0 auto 22px;
-  line-height:1.7;
-  max-width:550px;
-}
-
-footer {
-  padding:35px 5%;
-  background:#60485d;
-  color:white;
-}
-
-.footer-inner {
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.footer-brand {
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.footer-brand img {
-  width:55px;
-  height:55px;
-  object-fit:contain;
-  background:white;
-  border-radius:50%;
-}
-
-footer p { color:#f0dfe9; font-size:.85rem; }
-
-.overlay {
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(48,32,47,.5);
-  z-index:50;
-  justify-content:center;
-  align-items:center;
-  padding:15px;
-}
-
-.overlay.show { display:flex; }
-
-.modal {
-  background:white;
-  width:min(100%,580px);
-  max-height:90vh;
-  overflow-y:auto;
-  border-radius:25px;
-  padding:25px;
-  box-shadow:0 20px 70px rgba(0,0,0,.2);
-  animation:appear .25s ease;
-}
-
-.modal-header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  margin-bottom:20px;
-}
-
-.modal-header h2 {
-  font-family:'Playfair Display',serif;
-  color:#9c5b80;
-}
-
-.close-button {
-  border:0;
-  background:#fae8ef;
-  color:#9c5b80;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  font-size:1.2rem;
-}
-
-.cart-item {
-  display:grid;
-  grid-template-columns:65px 1fr auto;
-  align-items:center;
-  gap:12px;
-  border-bottom:1px solid #f2e5eb;
-  padding:12px 0;
-}
-
-.cart-item img {
-  width:65px;
-  height:65px;
-  object-fit:cover;
-  border-radius:12px;
-}
-
-.cart-item h4 { font-size:.9rem; }
-
-.cart-controls {
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-top:7px;
-}
-
-.cart-controls button {
-  border:0;
-  background:#f8e5ed;
-  color:#9d5b80;
-  border-radius:7px;
-  width:25px;
-  height:25px;
-  font-weight:800;
-}
-
-.remove-button {
-  border:0;
-  background:transparent;
-  color:#c56b89;
-  font-size:.8rem;
-  margin-top:5px;
-}
-
-.cart-total {
-  display:flex;
-  justify-content:space-between;
-  font-weight:800;
-  padding:20px 0;
-}
-
-.empty-cart {
-  text-align:center;
-  color:var(--muted);
-  padding:30px 5px;
-}
-
-.form-group { margin-bottom:14px; }
-
-.form-group label {
-  display:block;
-  font-size:.85rem;
-  font-weight:700;
-  margin-bottom:6px;
-}
-
-.form-group input,.form-group textarea {
-  width:100%;
-  border:1px solid #ead6e1;
-  background:#fffafd;
-  padding:12px;
-  border-radius:12px;
-  outline:none;
-}
-
-.form-group input:focus,.form-group textarea:focus {
-  border-color:#d88ead;
-  box-shadow:0 0 0 3px #f9e3ed;
-}
-
-.form-group textarea { min-height:85px; resize:vertical; }
-
-.hint {
-  font-size:.78rem;
-  color:var(--muted);
-  line-height:1.5;
-  margin:12px 0;
-}
-
-.full-button { width:100%; margin-top:8px; }
-
-@keyframes appear {
-  from { opacity:0; transform:translateY(12px); }
-  to { opacity:1; transform:translateY(0); }
-}
-
-@media(max-width:900px) {
-  .products-grid { grid-template-columns:repeat(3,1fr); }
-  .nav-links { gap:13px; }
-}
-
-@media(max-width:650px) {
-  .nav { flex-wrap:wrap; }
-  .nav-links {
-    order:3;
-    width:100%;
-    justify-content:center;
-    font-size:.82rem;
+@media(max-width:650px){
+  .nav{min-height:68px}
+  .brand img{width:45px;height:45px}
+  .brand strong{font-size:23px}
+  .menu-button{display:block}
+  nav{
+    display:none;position:absolute;top:68px;left:0;right:0;
+    background:var(--cream);padding:18px;
+    flex-direction:column;box-shadow:var(--shadow);
   }
-  .brand img { width:48px; height:48px; }
-  .brand-name { font-size:1.35rem; }
-  .hero { padding:55px 6%; }
-  .hero-inner { grid-template-columns:1fr; gap:30px; }
-  .hero-art { min-height:250px; }
-  .hero-art img { max-height:150px; }
-  section { padding:55px 5%; }
-  .products-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px; }
-  .product-photo { height:175px; }
-  .product-info { padding:12px; }
-  .product-info h3 { font-size:.98rem; }
-  .product-bottom { align-items:flex-start; flex-direction:column; }
-  .featured-box { grid-template-columns:1fr; padding:20px; }
-  .featured-box h2 { font-size:2rem; }
-  .steps { grid-template-columns:1fr; }
-  .footer-inner { flex-direction:column; text-align:center; }
+  nav.open{display:flex}
+  .hero{padding:48px 0}
+  .hero-content{grid-template-columns:1fr;gap:25px}
+  .hero-image img{height:270px}
+  .section{padding:50px 0}
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+  .product-image{height:175px}
+  .product-info{padding:12px}
+  .product-info h3{font-size:16px}
+  .about-grid{grid-template-columns:1fr}
+  .contact-box{padding:25px 17px}
 }
-
-@media(max-width:360px) {
-  .products-grid { grid-template-columns:1fr; }
-  .product-photo { height:240px; }
+@media(max-width:360px){
+  .product-grid{grid-template-columns:1fr}
+  .product-image{height:240px}
 }
 </style>
 </head>
@@ -631,399 +245,434 @@ footer p { color:#f0dfe9; font-size:.85rem; }
 <body>
 
 <header>
-  <nav class="nav">
-    <a class="brand" href="#inicio">
-      <img src="imagenes/logo.jpg" alt="Logo de ALENA">
-      <div>
-        <div class="brand-name">ALENA</div>
-        <div class="brand-tag">La Magia de Transformar</div>
-      </div>
+  <div class="container nav">
+    <a href="#inicio" class="brand">
+      <img src="logo.jpg" alt="Logo de ALENA" onerror="this.style.display='none'">
+      <span><strong>ALENA</strong><small>LA MAGIA DE TRANSFORMAR</small></span>
     </a>
 
-    <div class="nav-links">
+    <button class="menu-button" id="menuButton" aria-label="Abrir menú">☰</button>
+
+    <nav id="mainNav">
       <a href="#inicio">Inicio</a>
       <a href="#catalogo">Catálogo</a>
       <a href="#personaliza">Personaliza</a>
       <a href="#contacto">Contacto</a>
-    </div>
-
-    <button class="cart-button" onclick="openCart()">
-      🛍️ Mi carrito <span id="cart-count">0</span>
-    </button>
-  </nav>
+      <button class="cart-button" id="openCart">🛍️ Carrito (<span id="cartCount">0</span>)</button>
+    </nav>
+  </div>
 </header>
 
 <main>
-
 <section class="hero" id="inicio">
-  <span class="decor one">🌸</span>
-  <span class="decor two">✨</span>
-
-  <div class="hero-inner">
+  <div class="container hero-content">
     <div>
-      <span class="eyebrow">HECHO CON AMOR EN EL SALVADOR 💗</span>
+      <span class="eyebrow">Detalles hechos con amor</span>
       <h1>Pequeños detalles,<br><span>grandes emociones.</span></h1>
       <p>
-        En ALENA transformamos la creatividad en detalles especiales.
+        En ALENA transformamos la creatividad en recuerdos especiales.
         Descubre flores, ramos, accesorios y regalos artesanales
-        hechos con dedicación y mucho cariño.
+        elaborados con dedicación para cada ocasión.
       </p>
       <a href="#catalogo" class="primary-button">Descubrir catálogo ✨</a>
     </div>
-
-    <div class="hero-art">
-      <img src="imagenes/logo.jpg" alt="ALENA, La Magia de Transformar">
-      <strong>ALENA</strong>
-      <small>La Magia de Transformar</small>
-      <p style="margin:15px 0 0;text-align:center;font-size:.85rem;">
-        ♡ Cada creación tiene algo especial ♡
-      </p>
+    <div class="hero-image">
+      <img src="foto35.jpg" alt="Creación artesanal de ALENA"
+           onerror="this.onerror=null;this.src='foto1.jpg'">
     </div>
   </div>
 </section>
 
-<section id="catalogo">
-  <div class="section-inner">
+<section class="section" id="catalogo">
+  <div class="container">
     <div class="section-heading">
-      <span class="mini">CREACIONES CON AMOR</span>
-      <h2>Nuestro catálogo 🌷</h2>
-      <p>Encuentra ese detalle especial para cada ocasión.</p>
+      <span class="eyebrow">Creaciones ALENA</span>
+      <h2>Nuestro catálogo</h2>
+      <p>Encuentra ese detalle especial para alguien especial.</p>
     </div>
-
-    <div class="category-list" id="categories"></div>
-    <div class="products-grid" id="products"></div>
+    <div class="categories" id="categories"></div>
+    <div class="product-grid" id="productGrid"></div>
   </div>
 </section>
 
-<section class="featured">
-  <div class="section-inner">
-    <div class="featured-box">
-      <img src="imagenes/foto35.jpeg" alt="Cuadro artesanal de ALENA">
-      <div>
-        <span class="eyebrow">UN DETALLE INOLVIDABLE</span>
-        <h2>Cuadros personalizados</h2>
-        <p>
-          Celebra momentos, expresa cariño y conserva recuerdos
-          con cuadros artesanales creados para distintas ocasiones.
-          ¡Cuéntanos tu idea y la hacemos realidad!
-        </p>
-        <a href="#catalogo" class="primary-button">Ver creaciones 💕</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="personaliza">
-  <div class="section-inner">
+<section class="section about" id="personaliza">
+  <div class="container">
     <div class="section-heading">
-      <span class="mini">TU IDEA, NUESTRA CREATIVIDAD</span>
-      <h2>¿Cómo hacer tu pedido?</h2>
-      <p>Es muy fácil tener un detalle hecho especialmente para ti.</p>
+      <span class="eyebrow">Hecho especialmente para ti</span>
+      <h2>Personaliza tu detalle</h2>
+      <p>¡Tú imaginas, nosotros lo hacemos realidad!</p>
     </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-icon">🌸</div>
-        <h3>1. Elige tu favorito</h3>
-        <p>Explora el catálogo y agrega al carrito los productos que te gusten.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon">🎀</div>
-        <h3>2. Personaliza</h3>
-        <p>Cuéntanos los colores, nombres, temática o detalles que deseas.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon">💌</div>
-        <h3>3. Envía tu pedido</h3>
-        <p>Completa tus datos y comparte tu solicitud por WhatsApp.</p>
-      </div>
+    <div class="about-grid">
+      <article class="about-card">
+        <div class="emoji">💡</div>
+        <h3>Elige tu idea</h3>
+        <p>Cuéntanos qué creación tienes en mente y para qué ocasión la necesitas.</p>
+      </article>
+      <article class="about-card">
+        <div class="emoji">🎨</div>
+        <h3>Personalízala</h3>
+        <p>Escoge colores, detalles y elementos para hacerla especial.</p>
+      </article>
+      <article class="about-card">
+        <div class="emoji">🎁</div>
+        <h3>Haz tu pedido</h3>
+        <p>Escríbenos por WhatsApp para consultar precio y coordinar tu pedido.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contacto">
-  <div class="section-inner">
-    <span class="mini">ESTAMOS PARA TI</span>
-    <h2>¡Hablemos de tu idea! 💗</h2>
-    <p>
-      ¿Tienes una ocasión especial o quieres una creación personalizada?
-      Escríbenos y conversemos sobre ese detalle que imaginas.
-    </p>
-    <a class="primary-button"
-       href="https://wa.me/50379965146"
-       target="_blank"
-       rel="noopener">
-      💬 Contactar por WhatsApp
-    </a>
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="contact-box">
+      <span class="eyebrow">Estamos para ayudarte</span>
+      <h2>¿Tienes una idea especial?</h2>
+      <p>Escríbenos y juntos crearemos un detalle inolvidable.</p>
+      <a class="whatsapp-button" href="https://wa.me/50379965146" target="_blank" rel="noopener">
+        💬 Contactar por WhatsApp
+      </a>
+    </div>
   </div>
 </section>
-
 </main>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="imagenes/logo.jpg" alt="Logo ALENA">
-      <div>
-        <strong style="font-family:'Playfair Display',serif;font-size:1.5rem;">ALENA</strong>
-        <p>La Magia de Transformar ✨</p>
-      </div>
-    </div>
-    <p>Hecho con amor ♡ · El Salvador</p>
-  </div>
+  <h2>ALENA</h2>
+  <p>La Magia de Transformar ✨</p>
+  <p>Creaciones artesanales hechas con amor.</p>
+  <p>© <span id="year"></span> ALENA. Todos los derechos reservados.</p>
 </footer>
 
-<!-- VENTANA DEL CARRITO -->
-<div class="overlay" id="cart-overlay" onclick="outsideClose(event,'cart-overlay')">
-  <div class="modal">
-    <div class="modal-header">
-      <h2>🛍️ Tu carrito</h2>
-      <button class="close-button" onclick="closeModal('cart-overlay')">×</button>
-    </div>
-    <div id="cart-items"></div>
-    <div id="cart-footer"></div>
+<div class="overlay" id="overlay"></div>
+
+<aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras">
+  <div class="cart-header">
+    <h2>Tu carrito 🛍️</h2>
+    <button class="close-button" id="closeCart" aria-label="Cerrar carrito">×</button>
   </div>
-</div>
 
-<!-- VENTANA DEL PEDIDO -->
-<div class="overlay" id="checkout-overlay" onclick="outsideClose(event,'checkout-overlay')">
-  <div class="modal">
-    <div class="modal-header">
-      <h2>💌 Datos de tu pedido</h2>
-      <button class="close-button" onclick="closeModal('checkout-overlay')">×</button>
-    </div>
+  <div class="cart-items" id="cartItems"></div>
 
-    <form id="checkout-form">
-      <div class="form-group">
-        <label for="customer-name">Tu nombre *</label>
-        <input id="customer-name" required maxlength="100" placeholder="Escribe tu nombre">
-      </div>
+  <div class="cart-total">
+    <span>Productos</span>
+    <span id="cartTotal">0</span>
+  </div>
 
-      <div class="form-group">
-        <label for="customer-phone">Tu teléfono *</label>
-        <input id="customer-phone" required type="tel" maxlength="25" placeholder="Tu número de contacto">
-      </div>
+  <div class="checkout">
+    <h3>Datos para tu pedido</h3>
+    <form id="orderForm">
+      <label for="customerName">Nombre completo *</label>
+      <input id="customerName" name="customerName" required maxlength="100" placeholder="Tu nombre">
 
-      <div class="form-group">
-        <label for="customer-address">Dirección o lugar de entrega *</label>
-        <input id="customer-address" required maxlength="250" placeholder="¿Dónde deseas recibir tu pedido?">
-      </div>
+      <label for="customerPhone">Número de teléfono *</label>
+      <input id="customerPhone" name="customerPhone" required type="tel" maxlength="25" placeholder="Tu número">
 
-      <div class="form-group">
-        <label for="customer-date">Fecha en que lo necesitas</label>
-        <input id="customer-date" type="date">
-      </div>
+      <label for="customerAddress">Dirección de entrega *</label>
+      <input id="customerAddress" name="customerAddress" required maxlength="200" placeholder="Lugar de entrega">
 
-      <div class="form-group">
-        <label for="customer-notes">Detalles o personalización</label>
-        <textarea id="customer-notes" maxlength="1000"
-          placeholder="Colores, nombres, temática, dedicatoria..."></textarea>
-      </div>
+      <label for="deliveryDate">Fecha deseada</label>
+      <input id="deliveryDate" name="deliveryDate" type="date">
 
-      <p class="hint">
-        Se intentará compartir el mensaje y las fotos de los productos.
-        Si tu dispositivo no permite compartir fotografías, podrás adjuntarlas manualmente.
-        Los precios se consultan directamente con ALENA.
+      <label for="orderNotes">Detalles adicionales</label>
+      <textarea id="orderNotes" name="orderNotes" maxlength="500" placeholder="Colores, dedicatoria u otros detalles..."></textarea>
+
+      <button class="primary-button" type="submit">Enviar pedido por WhatsApp</button>
+      <p class="note">
+        Este formulario prepara tu mensaje. Revisa los datos y pulsa enviar
+        en WhatsApp para completar tu consulta. El precio se confirma por chat.
       </p>
-
-      <button type="submit" class="primary-button full-button" id="send-order">
-        📸 Compartir pedido y fotos
-      </button>
     </form>
   </div>
-</div>
+</aside>
+
+<div class="toast" id="toast" role="status"></div>
 
 <script>
-const WHATSAPP = "50379965146";
+const WHATSAPP_NUMBER = "50379965146";
 
 const products = [
-  {id:1,name:"Ramo de flores",category:"Ramos y flores",photo:"foto1.jpeg"},
-  {id:2,name:"Decoración floral",category:"Decoraciones florales",photo:"foto2.jpeg"},
-  {id:3,name:"Alas decorativas para tumbas",category:"Coronas y arreglos para difuntos",photo:"foto3.jpeg"},
-  {id:4,name:"Arreglo floral azul",category:"Decoraciones florales",photo:"foto4.jpeg"},
-  {id:5,name:"Ramo de girasoles",category:"Ramos y flores",photo:"foto5.jpeg"},
-  {id:6,name:"Decoración de flores",category:"Decoraciones florales",photo:"foto6.jpeg"},
-  {id:7,name:"Llavero personalizado",category:"Llaveros y personajes",photo:"foto7.jpeg"},
-  {id:8,name:"Ramo de Hot Wheels",category:"Hot Wheels",photo:"foto8.jpeg"},
-  {id:9,name:"Macetita de girasol",category:"Girasoles y macetitas",photo:"foto9.jpeg"},
-  {id:10,name:"Ramo personalizado",category:"Ramos y flores",photo:"foto10.jpeg"},
-  {id:11,name:"Arreglo de Hot Wheels",category:"Hot Wheels",photo:"foto11.jpeg"},
-  {id:12,name:"Llavero personalizado",category:"Llaveros y personajes",photo:"foto12.jpeg"},
-  {id:13,name:"Llavero de flores",category:"Llaveros y personajes",photo:"foto13.jpeg"},
-  {id:14,name:"Ramo de flores rosadas",category:"Ramos y flores",photo:"foto14.jpeg"},
-  {id:15,name:"Personaje personalizado",category:"Llaveros y personajes",photo:"foto15.jpeg"},
-  {id:16,name:"Lapiceros personalizados",category:"Lapiceros y accesorios",photo:"foto16.jpeg"},
-  {id:17,name:"Accesorios personalizados",category:"Lapiceros y accesorios",photo:"foto17.jpeg"},
-  {id:18,name:"Personaje de panda",category:"Llaveros y personajes",photo:"foto18.jpeg"},
-  {id:19,name:"Personaje personalizado",category:"Llaveros y personajes",photo:"foto19.jpeg"},
-  {id:20,name:"Ramo de Hot Wheels",category:"Hot Wheels",photo:"foto20.jpeg"},
-  {id:21,name:"Ramo de flores",category:"Ramos y flores",photo:"foto21.jpeg"},
-  {id:22,name:"Personaje decorativo",category:"Llaveros y personajes",photo:"foto22.jpeg"},
-  {id:23,name:"Personaje decorativo",category:"Llaveros y personajes",photo:"foto23.jpeg"},
-  {id:24,name:"Flor artesanal",category:"Flores individuales",photo:"foto24.jpeg"},
-  {id:25,name:"Girasol artesanal",category:"Flores individuales",photo:"foto25.jpeg"},
-  {id:26,name:"Flores decorativas",category:"Flores individuales",photo:"foto26.jpeg"},
-  {id:27,name:"Llavero personalizado",category:"Llaveros y personajes",photo:"foto27.jpeg"},
-  {id:28,name:"Personaje de ranita",category:"Llaveros y personajes",photo:"foto28.jpeg"},
-  {id:29,name:"Personaje personalizado",category:"Llaveros y personajes",photo:"foto29.jpeg"},
-  {id:30,name:"Personaje de pollito",category:"Llaveros y personajes",photo:"foto30.jpeg"},
-  {id:31,name:"Ramo personalizado",category:"Ramos personalizados",photo:"foto31.jpeg"},
-  {id:32,name:"Ramo de personajes",category:"Ramos personalizados",photo:"foto32.jpeg"},
-  {id:33,name:"Ramo personalizado",category:"Ramos personalizados",photo:"foto33.jpeg"},
-  {id:34,name:"Cuadro navideño",category:"Cuadros personalizados",photo:"foto34.jpeg"},
-  {id:35,name:"Cuadro floral iluminado",category:"Cuadros personalizados",photo:"foto35.jpeg"},
-  {id:36,name:"Cuadro de cumpleaños",category:"Cuadros personalizados",photo:"foto36.jpeg"},
-  {id:37,name:"Cuadro floral personalizado",category:"Cuadros personalizados",photo:"foto37.jpeg"},
-  {id:38,name:"Cuadro navideño personalizado",category:"Cuadros personalizados",photo:"foto38.jpeg"},
-  {id:39,name:"Ramo de Spider-Man",category:"Ramos personalizados",photo:"foto39.jpeg"}
+  {id:1,name:"Ramo de flores",photo:"foto1.jpg",category:"Ramos y flores"},
+  {id:2,name:"Decoración floral",photo:"foto2.jpg",category:"Decoraciones florales"},
+  {id:3,name:"Alas decorativas para tumbas",photo:"foto3.jpg",category:"Arreglos para difuntos"},
+  {id:4,name:"Arreglo floral azul",photo:"foto4.jpg",category:"Decoraciones florales"},
+  {id:5,name:"Ramo de girasoles",photo:"foto5.jpg",category:"Girasoles y macetitas"},
+  {id:6,name:"Decoración de flores",photo:"foto6.jpg",category:"Decoraciones florales"},
+  {id:7,name:"Llavero personalizado",photo:"foto7.jpg",category:"Llaveros y personajes"},
+  {id:8,name:"Ramo de Hot Wheels",photo:"foto8.jpg",category:"Hot Wheels"},
+  {id:9,name:"Macetita de girasol",photo:"foto9.jpg",category:"Girasoles y macetitas"},
+  {id:10,name:"Ramo personalizado",photo:"foto10.jpg",category:"Ramos personalizados"},
+  {id:11,name:"Arreglo de Hot Wheels",photo:"foto11.jpg",category:"Hot Wheels"},
+  {id:12,name:"Llavero personalizado",photo:"foto12.jpg",category:"Llaveros y personajes"},
+  {id:13,name:"Llavero de flores",photo:"foto13.jpg",category:"Llaveros y personajes"},
+  {id:14,name:"Ramo de flores rosadas",photo:"foto14.jpg",category:"Ramos y flores"},
+  {id:15,name:"Personaje personalizado",photo:"foto15.jpg",category:"Llaveros y personajes"},
+  {id:16,name:"Lapiceros personalizados",photo:"foto16.jpg",category:"Lapiceros y accesorios"},
+  {id:17,name:"Accesorios personalizados",photo:"foto17.jpg",category:"Lapiceros y accesorios"},
+  {id:18,name:"Personaje de panda",photo:"foto18.jpg",category:"Llaveros y personajes"},
+  {id:19,name:"Personaje personalizado",photo:"foto19.jpg",category:"Llaveros y personajes"},
+  {id:20,name:"Ramo de Hot Wheels",photo:"foto20.jpg",category:"Hot Wheels"},
+  {id:21,name:"Ramo de flores",photo:"foto21.jpg",category:"Ramos y flores"},
+  {id:22,name:"Personaje decorativo",photo:"foto22.jpg",category:"Llaveros y personajes"},
+  {id:23,name:"Personaje decorativo",photo:"foto23.jpg",category:"Llaveros y personajes"},
+  {id:24,name:"Flor artesanal",photo:"foto24.jpg",category:"Flores individuales"},
+  {id:25,name:"Girasol artesanal",photo:"foto25.jpg",category:"Flores individuales"},
+  {id:26,name:"Flores decorativas",photo:"foto26.jpg",category:"Flores individuales"},
+  {id:27,name:"Llavero personalizado",photo:"foto27.jpg",category:"Llaveros y personajes"},
+  {id:28,name:"Personaje de ranita",photo:"foto28.jpg",category:"Llaveros y personajes"},
+  {id:29,name:"Personaje personalizado",photo:"foto29.jpg",category:"Llaveros y personajes"},
+  {id:30,name:"Personaje de pollito",photo:"foto30.jpg",category:"Llaveros y personajes"},
+  {id:31,name:"Ramo personalizado",photo:"foto31.jpg",category:"Ramos personalizados"},
+  {id:32,name:"Ramo de personajes",photo:"foto32.jpg",category:"Ramos personalizados"},
+  {id:33,name:"Ramo personalizado",photo:"foto33.jpg",category:"Ramos personalizados"},
+  {id:34,name:"Cuadro navideño",photo:"foto34.jpg",category:"Cuadros personalizados"},
+  {id:35,name:"Cuadro floral iluminado",photo:"foto35.jpg",category:"Cuadros personalizados"},
+  {id:36,name:"Cuadro de cumpleaños",photo:"foto36.jpg",category:"Cuadros personalizados"},
+  {id:37,name:"Cuadro floral personalizado",photo:"foto37.jpg",category:"Cuadros personalizados"},
+  {id:38,name:"Cuadro navideño personalizado",photo:"foto38.jpg",category:"Cuadros personalizados"},
+  {id:39,name:"Ramo de Spider-Man",photo:"foto39.jpg",category:"Ramos personalizados"}
 ];
 
 let cart = [];
 let selectedCategory = "Todos";
 
-const productsContainer = document.getElementById("products");
-const categoriesContainer = document.getElementById("categories");
+const productGrid = document.getElementById("productGrid");
+const categoriesBox = document.getElementById("categories");
+const cartPanel = document.getElementById("cartPanel");
+const overlay = document.getElementById("overlay");
 
-function renderCategories() {
-  const categories = ["Todos",...new Set(products.map(p => p.category))];
-
-  categoriesContainer.innerHTML = categories.map(category => `
-    <button class="category-button ${selectedCategory === category ? "active" : ""}"
-      onclick="selectCategory(${JSON.stringify(category)})">
-      ${category === "Todos" ? "✨ " : "🌸 "}${category}
-    </button>
-  `).join("");
+function showToast(message){
+  const toast=document.getElementById("toast");
+  toast.textContent=message;
+  toast.classList.add("show");
+  clearTimeout(showToast.timer);
+  showToast.timer=setTimeout(()=>toast.classList.remove("show"),2400);
 }
 
-function renderProducts() {
-  const filtered = selectedCategory === "Todos"
-    ? products
-    : products.filter(p => p.category === selectedCategory);
+function renderCategories(){
+  const categories=["Todos",...new Set(products.map(p=>p.category))];
+  categoriesBox.innerHTML="";
+  categories.forEach(category=>{
+    const button=document.createElement("button");
+    button.className="category-button"+(selectedCategory===category?" active":"");
+    button.textContent=category;
+    button.addEventListener("click",()=>{
+      selectedCategory=category;
+      renderCategories();
+      renderProducts();
+    });
+    categoriesBox.appendChild(button);
+  });
+}
 
-  if (!filtered.length) {
-    productsContainer.innerHTML =
-      '<div class="empty-products">No hay productos en esta categoría.</div>';
+function renderProducts(){
+  productGrid.innerHTML="";
+  const filtered=selectedCategory==="Todos"
+    ?products:products.filter(p=>p.category===selectedCategory);
+
+  if(!filtered.length){
+    productGrid.innerHTML='<p class="empty-message">No hay productos en esta categoría.</p>';
     return;
   }
 
-  productsContainer.innerHTML = filtered.map(p => `
-    <article class="product-card">
-      <div class="product-photo">
-        <img src="imagenes/${p.photo}" alt="${p.name}" loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#ffe4ed,#eee5fc)'">
-      </div>
-      <div class="product-info">
-        <h3>${p.name}</h3>
-        <div class="product-category">${p.category}</div>
-        <div class="product-bottom">
-          <span class="price">Consultar precio</span>
-          <button class="add-button" onclick="addToCart(${p.id})">+ Agregar</button>
-        </div>
-      </div>
-    </article>
-  `).join("");
+  filtered.forEach(product=>{
+    const card=document.createElement("article");
+    card.className="product-card";
+
+    const imageBox=document.createElement("div");
+    imageBox.className="product-image";
+    const img=document.createElement("img");
+    img.src=product.photo;
+    img.alt=product.name;
+    img.loading="lazy";
+    img.onerror=function(){
+      this.onerror=null;
+      this.alt="Imagen no encontrada: "+product.photo;
+      this.src="data:image/svg+xml;charset=UTF-8,"+encodeURIComponent(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect width="100%" height="100%" fill="#f8edf3"/><text x="50%" y="48%" text-anchor="middle" fill="#bd6f98" font-size="20">Foto no encontrada</text><text x="50%" y="60%" text-anchor="middle" fill="#88798b" font-size="15">'+product.photo+'</text></svg>'
+      );
+    };
+    imageBox.appendChild(img);
+
+    const info=document.createElement("div");
+    info.className="product-info";
+
+    const category=document.createElement("div");
+    category.className="product-category";
+    category.textContent=product.category;
+
+    const name=document.createElement("h3");
+    name.textContent=product.name;
+
+    const price=document.createElement("p");
+    price.className="product-price";
+    price.textContent="Precio: consultar";
+
+    const button=document.createElement("button");
+    button.className="add-button";
+    button.textContent="＋ Agregar al carrito";
+    button.addEventListener("click",()=>addToCart(product.id));
+
+    info.append(category,name,price,button);
+    card.append(imageBox,info);
+    productGrid.appendChild(card);
+  });
 }
 
-function selectCategory(category) {
-  selectedCategory = category;
-  renderCategories();
-  renderProducts();
-}
-
-function addToCart(id) {
-  const item = cart.find(p => p.id === id);
-
-  if (item) item.quantity++;
+function addToCart(id){
+  const existing=cart.find(item=>item.id===id);
+  if(existing)existing.quantity++;
   else cart.push({id,quantity:1});
-
-  updateCartCount();
-}
-
-function updateCartCount() {
-  const count = cart.reduce((sum,p) => sum + p.quantity,0);
-  document.getElementById("cart-count").textContent = count;
-}
-
-function openCart() {
   renderCart();
-  document.getElementById("cart-overlay").classList.add("show");
+  showToast("¡Producto agregado al carrito! 💗");
 }
 
-function closeModal(id) {
-  document.getElementById(id).classList.remove("show");
-}
-
-function outsideClose(event,id) {
-  if (event.target.id === id) closeModal(id);
-}
-
-function changeQuantity(id,amount) {
-  const item = cart.find(p => p.id === id);
-  if (!item) return;
-
-  item.quantity += amount;
-
-  if (item.quantity <= 0) {
-    cart = cart.filter(p => p.id !== id);
-  }
-
-  updateCartCount();
+function changeQuantity(id,amount){
+  const item=cart.find(p=>p.id===id);
+  if(!item)return;
+  item.quantity+=amount;
+  if(item.quantity<=0)cart=cart.filter(p=>p.id!==id);
   renderCart();
 }
 
-function removeItem(id) {
-  cart = cart.filter(p => p.id !== id);
-  updateCartCount();
+function removeFromCart(id){
+  cart=cart.filter(item=>item.id!==id);
   renderCart();
 }
 
-function renderCart() {
-  const container = document.getElementById("cart-items");
-  const footer = document.getElementById("cart-footer");
+function renderCart(){
+  const cartItems=document.getElementById("cartItems");
+  cartItems.innerHTML="";
+  const count=cart.reduce((sum,item)=>sum+item.quantity,0);
+  document.getElementById("cartCount").textContent=count;
+  document.getElementById("cartTotal").textContent=count+" artículo(s)";
 
-  if (!cart.length) {
-    container.innerHTML = `
-      <div class="empty-cart">
-        <div style="font-size:3rem">🛍️</div>
-        <p>Tu carrito está esperando cositas bonitas.</p>
-      </div>
-    `;
-    footer.innerHTML = "";
+  if(cart.length===0){
+    cartItems.innerHTML='<p class="empty-message">Tu carrito está vacío. ¡Agrega una creación que te guste! 🌷</p>';
     return;
   }
 
-  container.innerHTML = cart.map(item => {
-    const p = products.find(product => product.id === item.id);
+  cart.forEach(item=>{
+    const product=products.find(p=>p.id===item.id);
+    if(!product)return;
 
-    return `
-      <div class="cart-item">
-        <img src="imagenes/${p.photo}" alt="${p.name}">
-        <div>
-          <h4>${p.name}</h4>
-          <div class="cart-controls">
-            <button onclick="changeQuantity(${p.id},-1)">−</button>
-            <span>${item.quantity}</span>
-            <button onclick="changeQuantity(${p.id},1)">+</button>
-          </div>
-          <button class="remove-button" onclick="removeItem(${p.id})">Quitar</button>
-        </div>
-        <span class="price">Consultar</span>
-      </div>
-    `;
-  }).join("");
+    const row=document.createElement("div");
+    row.className="cart-item";
 
-  const totalItems = cart.reduce((sum,item) => sum + item.quantity,0);
+    const img=document.createElement("img");
+    img.src=product.photo;
+    img.alt=product.name;
+    img.onerror=function(){this.style.visibility="hidden"};
 
-  footer.innerHTML = `
-    <div class="cart-total">
-      <span>Total de productos: ${totalItems}</span>
-      <span>Precio por consultar</span>
-    </div>
-    <button class="primary-button full-button" onclick="goToCheckout()">
-      Continuar con mi pedido 💌
-    </button>
-  `;
+    const details=document.createElement("div");
+    const title=document.createElement("h3");
+    title.textContent=product.name;
+    const category=document.createElement("small");
+    category.textContent="Consultar precio";
+    const quantity=document.createElement("div");
+    quantity.className="quantity";
+
+    const minus=document.createElement("button");
+    minus.type="button";
+    minus.textContent="−";
+    minus.setAttribute("aria-label","Disminuir cantidad");
+    minus.addEventListener("click",()=>changeQuantity(product.id,-1));
+
+    const number=document.createElement("span");
+    number.textContent=item.quantity;
+
+    const plus=document.createElement("button");
+    plus.type="button";
+    plus.textContent="+";
+    plus.setAttribute("aria-label","Aumentar cantidad");
+    plus.addEventListener("click",()=>changeQuantity(product.id,1));
+
+    quantity.append(minus,number,plus);
+    details.append(title,category,quantity);
+
+    const remove=document.createElement("button");
+    remove.className="remove-button";
+    remove.type="button";
+    remove.textContent="Quitar";
+    remove.addEventListener("click",()=>removeFromCart(product.id));
+
+    row.append(img,details,remove);
+    cartItems.appendChild(row);
+  });
 }
+
+function openCart(){
+  cartPanel.classList.add("show");
+  overlay.classList.add("show");
+  document.body.style.overflow="hidden";
+}
+function closeCart(){
+  cartPanel.classList.remove("show");
+  overlay.classList.remove("show");
+  document.body.style.overflow="";
+}
+
+document.getElementById("openCart").addEventListener("click",openCart);
+document.getElementById("closeCart").addEventListener("click",closeCart);
+overlay.addEventListener("click",closeCart);
+
+document.getElementById("menuButton").addEventListener("click",()=>{
+  document.getElementById("mainNav").classList.toggle("open");
+});
+document.querySelectorAll("#mainNav a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    document.getElementById("mainNav").classList.remove("open");
+  });
+});
+
+document.getElementById("orderForm").addEventListener("submit",function(event){
+  event.preventDefault();
+
+  if(cart.length===0){
+    showToast("Primero agrega productos a tu carrito.");
+    return;
+  }
+
+  const name=document.getElementById("customerName").value.trim();
+  const phone=document.getElementById("customerPhone").value.trim();
+  const address=document.getElementById("customerAddress").value.trim();
+  const date=document.getElementById("deliveryDate").value;
+  const notes=document.getElementById("orderNotes").value.trim();
+
+  if(!name||!phone||!address){
+    showToast("Completa los datos obligatorios.");
+    return;
+  }
+
+  let message="🌸 *¡Hola! Quiero realizar una consulta de pedido en ALENA.*\n\n";
+  message+="👤 *Nombre:* "+name+"\n";
+  message+="📱 *Teléfono:* "+phone+"\n";
+  message+="📍 *Dirección de entrega:* "+address+"\n";
+  message+="📅 *Fecha deseada:* "+(date||"Por coordinar")+"\n\n";
+  message+="🛍️ *Productos seleccionados:*\n";
+
+  cart.forEach(item=>{
+    const product=products.find(p=>p.id===item.id);
+    if(product){
+      message+="• "+product.name+" — Cantidad: "+item.quantity+"\n";
+    }
+  });
+
+  message+="\n💬 *Detalles adicionales:* "+(notes||"Ninguno")+"\n";
+  message+="\n¿Podrían confirmarme los precios y la disponibilidad? ¡Muchas gracias! 💗";
+
+  const whatsappURL="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message);
+  window.open(whatsappURL,"_blank","noopener");
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+renderCategories();
+renderProducts();
+renderCart();
+</script>
+</body>
+</html>
+
 
 function goToCheckout() {
   if (!cart.length) return;
