@@ -1,0 +1,1181 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8dce8">
+<title>ALENA | La Magia de Transformar</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink:#f6c5d5;
+  --pink-dark:#d979a0;
+  --pink-light:#fff1f6;
+  --lilac:#e6dafa;
+  --turquoise:#c9eeeb;
+  --cream:#fffaf7;
+  --text:#493b49;
+  --muted:#897987;
+  --white:#fff;
+  --shadow:0 12px 35px rgba(139,91,119,.12);
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'DM Sans',sans-serif;
+  color:var(--text);
+  background:var(--cream);
+}
+
+button,input,textarea { font:inherit; }
+button { cursor:pointer; }
+a { color:inherit; text-decoration:none; }
+
+header {
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(255,250,247,.95);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #f5e5eb;
+}
+
+.nav {
+  max-width:1200px;
+  margin:auto;
+  padding:12px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand img {
+  width:58px;
+  height:58px;
+  object-fit:contain;
+  border-radius:50%;
+  background:white;
+}
+
+.brand-name {
+  font-family:'Playfair Display',serif;
+  font-size:1.65rem;
+  font-weight:800;
+  color:#b95f89;
+}
+
+.brand-tag {
+  font-size:.72rem;
+  color:var(--muted);
+  letter-spacing:1px;
+}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:22px;
+  font-size:.92rem;
+  font-weight:700;
+}
+
+.nav-links a:hover { color:var(--pink-dark); }
+
+.cart-button,.primary-button {
+  border:0;
+  border-radius:30px;
+  background:linear-gradient(135deg,#dc8eaf,#bb82c7);
+  color:white;
+  font-weight:800;
+  padding:13px 20px;
+  box-shadow:0 7px 18px rgba(185,95,137,.2);
+  transition:.25s;
+}
+
+.cart-button:hover,.primary-button:hover {
+  transform:translateY(-3px);
+  box-shadow:0 12px 25px rgba(185,95,137,.27);
+}
+
+.hero {
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 8% 15%,#fff 0 7%,transparent 8%),
+    radial-gradient(circle at 90% 80%,#fff 0 9%,transparent 10%),
+    linear-gradient(120deg,#ffe4ed,#f1e7ff 55%,#dcf6f0);
+  padding:85px 6%;
+}
+
+.hero-inner {
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:50px;
+}
+
+.eyebrow {
+  display:inline-block;
+  background:white;
+  color:#b45f88;
+  border-radius:30px;
+  padding:9px 15px;
+  font-size:.8rem;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:20px;
+}
+
+.hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,6vw,5.5rem);
+  line-height:1.04;
+  color:#69465e;
+  margin-bottom:20px;
+}
+
+.hero h1 span { color:#c66f9a; }
+
+.hero p {
+  max-width:540px;
+  color:#776879;
+  line-height:1.8;
+  font-size:1.05rem;
+  margin-bottom:28px;
+}
+
+.hero-art {
+  background:rgba(255,255,255,.65);
+  border:1px solid white;
+  border-radius:40px;
+  min-height:350px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+  box-shadow:var(--shadow);
+  transform:rotate(2deg);
+}
+
+.hero-art img {
+  width:min(100%,260px);
+  max-height:230px;
+  object-fit:contain;
+}
+
+.hero-art strong {
+  font-family:'Playfair Display',serif;
+  color:#b45f88;
+  font-size:1.8rem;
+  margin-top:15px;
+}
+
+.hero-art small { color:var(--muted); margin-top:5px; }
+
+.decor {
+  position:absolute;
+  font-size:2rem;
+  opacity:.7;
+  animation:float 4s ease-in-out infinite;
+}
+
+.decor.one { top:35px; right:10%; }
+.decor.two { bottom:35px; left:5%; animation-delay:1s; }
+
+@keyframes float {
+  0%,100% { transform:translateY(0) rotate(0); }
+  50% { transform:translateY(-13px) rotate(10deg); }
+}
+
+section { padding:75px 5%; }
+.section-inner { max-width:1200px; margin:auto; }
+
+.section-heading {
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.section-heading .mini,.mini {
+  color:#c16d97;
+  font-size:.78rem;
+  letter-spacing:2px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.section-heading h2 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4vw,3rem);
+  color:#69465e;
+  margin:8px 0;
+}
+
+.section-heading p { color:var(--muted); }
+
+.category-list {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:0 auto 35px;
+}
+
+.category-button {
+  border:1px solid #efd5e1;
+  background:white;
+  color:#886b80;
+  padding:11px 17px;
+  border-radius:30px;
+  font-weight:700;
+  transition:.2s;
+}
+
+.category-button:hover,.category-button.active {
+  background:#d88ead;
+  border-color:#d88ead;
+  color:white;
+}
+
+.products-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:22px;
+}
+
+.product-card {
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 5px 22px rgba(125,85,110,.08);
+  border:1px solid #f4e8ee;
+  transition:.3s;
+  animation:appear .45s ease both;
+}
+
+.product-card:hover {
+  transform:translateY(-7px);
+  box-shadow:var(--shadow);
+}
+
+.product-photo {
+  height:235px;
+  background:linear-gradient(135deg,#fff0f5,#f1eaff);
+  overflow:hidden;
+}
+
+.product-photo img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s;
+}
+
+.product-card:hover .product-photo img { transform:scale(1.06); }
+
+.product-info { padding:17px; }
+
+.product-info h3 {
+  font-family:'Playfair Display',serif;
+  font-size:1.12rem;
+  margin-bottom:7px;
+}
+
+.product-category {
+  color:#a17d98;
+  font-size:.76rem;
+  margin-bottom:13px;
+}
+
+.product-bottom {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.price {
+  font-size:.82rem;
+  font-weight:800;
+  color:#bd7097;
+}
+
+.add-button {
+  border:0;
+  background:#f9e3ed;
+  color:#a9567f;
+  border-radius:25px;
+  padding:10px 13px;
+  font-weight:800;
+  font-size:.8rem;
+  transition:.2s;
+}
+
+.add-button:hover { background:#d88ead; color:white; }
+
+.empty-products {
+  text-align:center;
+  grid-column:1/-1;
+  padding:35px;
+  color:var(--muted);
+}
+
+.featured {
+  background:linear-gradient(120deg,#fce5ed,#eee5fc);
+}
+
+.featured-box {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
+  background:rgba(255,255,255,.7);
+  border-radius:30px;
+  padding:35px;
+}
+
+.featured-box img {
+  width:100%;
+  max-height:360px;
+  object-fit:cover;
+  border-radius:22px;
+}
+
+.featured-box h2 {
+  font-family:'Playfair Display',serif;
+  font-size:2.5rem;
+  color:#845776;
+  margin-bottom:15px;
+}
+
+.featured-box p {
+  line-height:1.8;
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+.steps {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.step {
+  text-align:center;
+  background:white;
+  padding:28px 20px;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+}
+
+.step-icon {
+  width:65px;
+  height:65px;
+  margin:0 auto 15px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:1.8rem;
+  background:var(--pink-light);
+}
+
+.step h3 { margin-bottom:9px; }
+.step p { color:var(--muted); line-height:1.6; font-size:.9rem; }
+
+.contact {
+  background:linear-gradient(120deg,#e4f5f1,#f7e8f2);
+  text-align:center;
+}
+
+.contact h2 {
+  font-family:'Playfair Display',serif;
+  font-size:2.6rem;
+  margin:12px 0;
+  color:#69465e;
+}
+
+.contact p {
+  color:#786b79;
+  margin:0 auto 22px;
+  line-height:1.7;
+  max-width:550px;
+}
+
+footer {
+  padding:35px 5%;
+  background:#60485d;
+  color:white;
+}
+
+.footer-inner {
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.footer-brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.footer-brand img {
+  width:55px;
+  height:55px;
+  object-fit:contain;
+  background:white;
+  border-radius:50%;
+}
+
+footer p { color:#f0dfe9; font-size:.85rem; }
+
+.overlay {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(48,32,47,.5);
+  z-index:50;
+  justify-content:center;
+  align-items:center;
+  padding:15px;
+}
+
+.overlay.show { display:flex; }
+
+.modal {
+  background:white;
+  width:min(100%,580px);
+  max-height:90vh;
+  overflow-y:auto;
+  border-radius:25px;
+  padding:25px;
+  box-shadow:0 20px 70px rgba(0,0,0,.2);
+  animation:appear .25s ease;
+}
+
+.modal-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.modal-header h2 {
+  font-family:'Playfair Display',serif;
+  color:#9c5b80;
+}
+
+.close-button {
+  border:0;
+  background:#fae8ef;
+  color:#9c5b80;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  font-size:1.2rem;
+}
+
+.cart-item {
+  display:grid;
+  grid-template-columns:65px 1fr auto;
+  align-items:center;
+  gap:12px;
+  border-bottom:1px solid #f2e5eb;
+  padding:12px 0;
+}
+
+.cart-item img {
+  width:65px;
+  height:65px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.cart-item h4 { font-size:.9rem; }
+
+.cart-controls {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:7px;
+}
+
+.cart-controls button {
+  border:0;
+  background:#f8e5ed;
+  color:#9d5b80;
+  border-radius:7px;
+  width:25px;
+  height:25px;
+  font-weight:800;
+}
+
+.remove-button {
+  border:0;
+  background:transparent;
+  color:#c56b89;
+  font-size:.8rem;
+  margin-top:5px;
+}
+
+.cart-total {
+  display:flex;
+  justify-content:space-between;
+  font-weight:800;
+  padding:20px 0;
+}
+
+.empty-cart {
+  text-align:center;
+  color:var(--muted);
+  padding:30px 5px;
+}
+
+.form-group { margin-bottom:14px; }
+
+.form-group label {
+  display:block;
+  font-size:.85rem;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.form-group input,.form-group textarea {
+  width:100%;
+  border:1px solid #ead6e1;
+  background:#fffafd;
+  padding:12px;
+  border-radius:12px;
+  outline:none;
+}
+
+.form-group input:focus,.form-group textarea:focus {
+  border-color:#d88ead;
+  box-shadow:0 0 0 3px #f9e3ed;
+}
+
+.form-group textarea { min-height:85px; resize:vertical; }
+
+.hint {
+  font-size:.78rem;
+  color:var(--muted);
+  line-height:1.5;
+  margin:12px 0;
+}
+
+.full-button { width:100%; margin-top:8px; }
+
+@keyframes appear {
+  from { opacity:0; transform:translateY(12px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+@media(max-width:900px) {
+  .products-grid { grid-template-columns:repeat(3,1fr); }
+  .nav-links { gap:13px; }
+}
+
+@media(max-width:650px) {
+  .nav { flex-wrap:wrap; }
+  .nav-links {
+    order:3;
+    width:100%;
+    justify-content:center;
+    font-size:.82rem;
+  }
+  .brand img { width:48px; height:48px; }
+  .brand-name { font-size:1.35rem; }
+  .hero { padding:55px 6%; }
+  .hero-inner { grid-template-columns:1fr; gap:30px; }
+  .hero-art { min-height:250px; }
+  .hero-art img { max-height:150px; }
+  section { padding:55px 5%; }
+  .products-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px; }
+  .product-photo { height:175px; }
+  .product-info { padding:12px; }
+  .product-info h3 { font-size:.98rem; }
+  .product-bottom { align-items:flex-start; flex-direction:column; }
+  .featured-box { grid-template-columns:1fr; padding:20px; }
+  .featured-box h2 { font-size:2rem; }
+  .steps { grid-template-columns:1fr; }
+  .footer-inner { flex-direction:column; text-align:center; }
+}
+
+@media(max-width:360px) {
+  .products-grid { grid-template-columns:1fr; }
+  .product-photo { height:240px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="#inicio">
+      <img src="imagenes/logo.jpg" alt="Logo de ALENA">
+      <div>
+        <div class="brand-name">ALENA</div>
+        <div class="brand-tag">La Magia de Transformar</div>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#personaliza">Personaliza</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+    <button class="cart-button" onclick="openCart()">
+      🛍️ Mi carrito <span id="cart-count">0</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <span class="decor one">🌸</span>
+  <span class="decor two">✨</span>
+
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">HECHO CON AMOR EN EL SALVADOR 💗</span>
+      <h1>Pequeños detalles,<br><span>grandes emociones.</span></h1>
+      <p>
+        En ALENA transformamos la creatividad en detalles especiales.
+        Descubre flores, ramos, accesorios y regalos artesanales
+        hechos con dedicación y mucho cariño.
+      </p>
+      <a href="#catalogo" class="primary-button">Descubrir catálogo ✨</a>
+    </div>
+
+    <div class="hero-art">
+      <img src="imagenes/logo.jpg" alt="ALENA, La Magia de Transformar">
+      <strong>ALENA</strong>
+      <small>La Magia de Transformar</small>
+      <p style="margin:15px 0 0;text-align:center;font-size:.85rem;">
+        ♡ Cada creación tiene algo especial ♡
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="catalogo">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="mini">CREACIONES CON AMOR</span>
+      <h2>Nuestro catálogo 🌷</h2>
+      <p>Encuentra ese detalle especial para cada ocasión.</p>
+    </div>
+
+    <div class="category-list" id="categories"></div>
+    <div class="products-grid" id="products"></div>
+  </div>
+</section>
+
+<section class="featured">
+  <div class="section-inner">
+    <div class="featured-box">
+      <img src="imagenes/foto35.jpeg" alt="Cuadro artesanal de ALENA">
+      <div>
+        <span class="eyebrow">UN DETALLE INOLVIDABLE</span>
+        <h2>Cuadros personalizados</h2>
+        <p>
+          Celebra momentos, expresa cariño y conserva recuerdos
+          con cuadros artesanales creados para distintas ocasiones.
+          ¡Cuéntanos tu idea y la hacemos realidad!
+        </p>
+        <a href="#catalogo" class="primary-button">Ver creaciones 💕</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="personaliza">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="mini">TU IDEA, NUESTRA CREATIVIDAD</span>
+      <h2>¿Cómo hacer tu pedido?</h2>
+      <p>Es muy fácil tener un detalle hecho especialmente para ti.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">🌸</div>
+        <h3>1. Elige tu favorito</h3>
+        <p>Explora el catálogo y agrega al carrito los productos que te gusten.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">🎀</div>
+        <h3>2. Personaliza</h3>
+        <p>Cuéntanos los colores, nombres, temática o detalles que deseas.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">💌</div>
+        <h3>3. Envía tu pedido</h3>
+        <p>Completa tus datos y comparte tu solicitud por WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="section-inner">
+    <span class="mini">ESTAMOS PARA TI</span>
+    <h2>¡Hablemos de tu idea! 💗</h2>
+    <p>
+      ¿Tienes una ocasión especial o quieres una creación personalizada?
+      Escríbenos y conversemos sobre ese detalle que imaginas.
+    </p>
+    <a class="primary-button"
+       href="https://wa.me/50379965146"
+       target="_blank"
+       rel="noopener">
+      💬 Contactar por WhatsApp
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="imagenes/logo.jpg" alt="Logo ALENA">
+      <div>
+        <strong style="font-family:'Playfair Display',serif;font-size:1.5rem;">ALENA</strong>
+        <p>La Magia de Transformar ✨</p>
+      </div>
+    </div>
+    <p>Hecho con amor ♡ · El Salvador</p>
+  </div>
+</footer>
+
+<!-- VENTANA DEL CARRITO -->
+<div class="overlay" id="cart-overlay" onclick="outsideClose(event,'cart-overlay')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>🛍️ Tu carrito</h2>
+      <button class="close-button" onclick="closeModal('cart-overlay')">×</button>
+    </div>
+    <div id="cart-items"></div>
+    <div id="cart-footer"></div>
+  </div>
+</div>
+
+<!-- VENTANA DEL PEDIDO -->
+<div class="overlay" id="checkout-overlay" onclick="outsideClose(event,'checkout-overlay')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>💌 Datos de tu pedido</h2>
+      <button class="close-button" onclick="closeModal('checkout-overlay')">×</button>
+    </div>
+
+    <form id="checkout-form">
+      <div class="form-group">
+        <label for="customer-name">Tu nombre *</label>
+        <input id="customer-name" required maxlength="100" placeholder="Escribe tu nombre">
+      </div>
+
+      <div class="form-group">
+        <label for="customer-phone">Tu teléfono *</label>
+        <input id="customer-phone" required type="tel" maxlength="25" placeholder="Tu número de contacto">
+      </div>
+
+      <div class="form-group">
+        <label for="customer-address">Dirección o lugar de entrega *</label>
+        <input id="customer-address" required maxlength="250" placeholder="¿Dónde deseas recibir tu pedido?">
+      </div>
+
+      <div class="form-group">
+        <label for="customer-date">Fecha en que lo necesitas</label>
+        <input id="customer-date" type="date">
+      </div>
+
+      <div class="form-group">
+        <label for="customer-notes">Detalles o personalización</label>
+        <textarea id="customer-notes" maxlength="1000"
+          placeholder="Colores, nombres, temática, dedicatoria..."></textarea>
+      </div>
+
+      <p class="hint">
+        Se intentará compartir el mensaje y las fotos de los productos.
+        Si tu dispositivo no permite compartir fotografías, podrás adjuntarlas manualmente.
+        Los precios se consultan directamente con ALENA.
+      </p>
+
+      <button type="submit" class="primary-button full-button" id="send-order">
+        📸 Compartir pedido y fotos
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+const WHATSAPP = "50379965146";
+
+const products = [
+  {id:1,name:"Ramo de flores",category:"Ramos y flores",photo:"foto1.jpeg"},
+  {id:2,name:"Decoración floral",category:"Decoraciones florales",photo:"foto2.jpeg"},
+  {id:3,name:"Alas decorativas para tumbas",category:"Coronas y arreglos para difuntos",photo:"foto3.jpeg"},
+  {id:4,name:"Arreglo floral azul",category:"Decoraciones florales",photo:"foto4.jpeg"},
+  {id:5,name:"Ramo de girasoles",category:"Ramos y flores",photo:"foto5.jpeg"},
+  {id:6,name:"Decoración de flores",category:"Decoraciones florales",photo:"foto6.jpeg"},
+  {id:7,name:"Llavero personalizado",category:"Llaveros y personajes",photo:"foto7.jpeg"},
+  {id:8,name:"Ramo de Hot Wheels",category:"Hot Wheels",photo:"foto8.jpeg"},
+  {id:9,name:"Macetita de girasol",category:"Girasoles y macetitas",photo:"foto9.jpeg"},
+  {id:10,name:"Ramo personalizado",category:"Ramos y flores",photo:"foto10.jpeg"},
+  {id:11,name:"Arreglo de Hot Wheels",category:"Hot Wheels",photo:"foto11.jpeg"},
+  {id:12,name:"Llavero personalizado",category:"Llaveros y personajes",photo:"foto12.jpeg"},
+  {id:13,name:"Llavero de flores",category:"Llaveros y personajes",photo:"foto13.jpeg"},
+  {id:14,name:"Ramo de flores rosadas",category:"Ramos y flores",photo:"foto14.jpeg"},
+  {id:15,name:"Personaje personalizado",category:"Llaveros y personajes",photo:"foto15.jpeg"},
+  {id:16,name:"Lapiceros personalizados",category:"Lapiceros y accesorios",photo:"foto16.jpeg"},
+  {id:17,name:"Accesorios personalizados",category:"Lapiceros y accesorios",photo:"foto17.jpeg"},
+  {id:18,name:"Personaje de panda",category:"Llaveros y personajes",photo:"foto18.jpeg"},
+  {id:19,name:"Personaje personalizado",category:"Llaveros y personajes",photo:"foto19.jpeg"},
+  {id:20,name:"Ramo de Hot Wheels",category:"Hot Wheels",photo:"foto20.jpeg"},
+  {id:21,name:"Ramo de flores",category:"Ramos y flores",photo:"foto21.jpeg"},
+  {id:22,name:"Personaje decorativo",category:"Llaveros y personajes",photo:"foto22.jpeg"},
+  {id:23,name:"Personaje decorativo",category:"Llaveros y personajes",photo:"foto23.jpeg"},
+  {id:24,name:"Flor artesanal",category:"Flores individuales",photo:"foto24.jpeg"},
+  {id:25,name:"Girasol artesanal",category:"Flores individuales",photo:"foto25.jpeg"},
+  {id:26,name:"Flores decorativas",category:"Flores individuales",photo:"foto26.jpeg"},
+  {id:27,name:"Llavero personalizado",category:"Llaveros y personajes",photo:"foto27.jpeg"},
+  {id:28,name:"Personaje de ranita",category:"Llaveros y personajes",photo:"foto28.jpeg"},
+  {id:29,name:"Personaje personalizado",category:"Llaveros y personajes",photo:"foto29.jpeg"},
+  {id:30,name:"Personaje de pollito",category:"Llaveros y personajes",photo:"foto30.jpeg"},
+  {id:31,name:"Ramo personalizado",category:"Ramos personalizados",photo:"foto31.jpeg"},
+  {id:32,name:"Ramo de personajes",category:"Ramos personalizados",photo:"foto32.jpeg"},
+  {id:33,name:"Ramo personalizado",category:"Ramos personalizados",photo:"foto33.jpeg"},
+  {id:34,name:"Cuadro navideño",category:"Cuadros personalizados",photo:"foto34.jpeg"},
+  {id:35,name:"Cuadro floral iluminado",category:"Cuadros personalizados",photo:"foto35.jpeg"},
+  {id:36,name:"Cuadro de cumpleaños",category:"Cuadros personalizados",photo:"foto36.jpeg"},
+  {id:37,name:"Cuadro floral personalizado",category:"Cuadros personalizados",photo:"foto37.jpeg"},
+  {id:38,name:"Cuadro navideño personalizado",category:"Cuadros personalizados",photo:"foto38.jpeg"},
+  {id:39,name:"Ramo de Spider-Man",category:"Ramos personalizados",photo:"foto39.jpeg"}
+];
+
+let cart = [];
+let selectedCategory = "Todos";
+
+const productsContainer = document.getElementById("products");
+const categoriesContainer = document.getElementById("categories");
+
+function renderCategories() {
+  const categories = ["Todos",...new Set(products.map(p => p.category))];
+
+  categoriesContainer.innerHTML = categories.map(category => `
+    <button class="category-button ${selectedCategory === category ? "active" : ""}"
+      onclick="selectCategory(${JSON.stringify(category)})">
+      ${category === "Todos" ? "✨ " : "🌸 "}${category}
+    </button>
+  `).join("");
+}
+
+function renderProducts() {
+  const filtered = selectedCategory === "Todos"
+    ? products
+    : products.filter(p => p.category === selectedCategory);
+
+  if (!filtered.length) {
+    productsContainer.innerHTML =
+      '<div class="empty-products">No hay productos en esta categoría.</div>';
+    return;
+  }
+
+  productsContainer.innerHTML = filtered.map(p => `
+    <article class="product-card">
+      <div class="product-photo">
+        <img src="imagenes/${p.photo}" alt="${p.name}" loading="lazy"
+          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#ffe4ed,#eee5fc)'">
+      </div>
+      <div class="product-info">
+        <h3>${p.name}</h3>
+        <div class="product-category">${p.category}</div>
+        <div class="product-bottom">
+          <span class="price">Consultar precio</span>
+          <button class="add-button" onclick="addToCart(${p.id})">+ Agregar</button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+function selectCategory(category) {
+  selectedCategory = category;
+  renderCategories();
+  renderProducts();
+}
+
+function addToCart(id) {
+  const item = cart.find(p => p.id === id);
+
+  if (item) item.quantity++;
+  else cart.push({id,quantity:1});
+
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const count = cart.reduce((sum,p) => sum + p.quantity,0);
+  document.getElementById("cart-count").textContent = count;
+}
+
+function openCart() {
+  renderCart();
+  document.getElementById("cart-overlay").classList.add("show");
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove("show");
+}
+
+function outsideClose(event,id) {
+  if (event.target.id === id) closeModal(id);
+}
+
+function changeQuantity(id,amount) {
+  const item = cart.find(p => p.id === id);
+  if (!item) return;
+
+  item.quantity += amount;
+
+  if (item.quantity <= 0) {
+    cart = cart.filter(p => p.id !== id);
+  }
+
+  updateCartCount();
+  renderCart();
+}
+
+function removeItem(id) {
+  cart = cart.filter(p => p.id !== id);
+  updateCartCount();
+  renderCart();
+}
+
+function renderCart() {
+  const container = document.getElementById("cart-items");
+  const footer = document.getElementById("cart-footer");
+
+  if (!cart.length) {
+    container.innerHTML = `
+      <div class="empty-cart">
+        <div style="font-size:3rem">🛍️</div>
+        <p>Tu carrito está esperando cositas bonitas.</p>
+      </div>
+    `;
+    footer.innerHTML = "";
+    return;
+  }
+
+  container.innerHTML = cart.map(item => {
+    const p = products.find(product => product.id === item.id);
+
+    return `
+      <div class="cart-item">
+        <img src="imagenes/${p.photo}" alt="${p.name}">
+        <div>
+          <h4>${p.name}</h4>
+          <div class="cart-controls">
+            <button onclick="changeQuantity(${p.id},-1)">−</button>
+            <span>${item.quantity}</span>
+            <button onclick="changeQuantity(${p.id},1)">+</button>
+          </div>
+          <button class="remove-button" onclick="removeItem(${p.id})">Quitar</button>
+        </div>
+        <span class="price">Consultar</span>
+      </div>
+    `;
+  }).join("");
+
+  const totalItems = cart.reduce((sum,item) => sum + item.quantity,0);
+
+  footer.innerHTML = `
+    <div class="cart-total">
+      <span>Total de productos: ${totalItems}</span>
+      <span>Precio por consultar</span>
+    </div>
+    <button class="primary-button full-button" onclick="goToCheckout()">
+      Continuar con mi pedido 💌
+    </button>
+  `;
+}
+
+function goToCheckout() {
+  if (!cart.length) return;
+
+  closeModal("cart-overlay");
+  document.getElementById("checkout-overlay").classList.add("show");
+}
+
+function createOrderMessage() {
+  const name = document.getElementById("customer-name").value.trim();
+  const phone = document.getElementById("customer-phone").value.trim();
+  const address = document.getElementById("customer-address").value.trim();
+  const date = document.getElementById("customer-date").value || "Por confirmar";
+  const notes = document.getElementById("customer-notes").value.trim() || "Sin detalles adicionales";
+
+  const lines = cart.map(item => {
+    const p = products.find(product => product.id === item.id);
+    return `🌸 ${p.name} x ${item.quantity}`;
+  });
+
+  return [
+    "¡Hola, ALENA! 💗 Quiero realizar un pedido.",
+    "",
+    "🛍️ PRODUCTOS:",
+    ...lines,
+    "",
+    `👤 Nombre: ${name}`,
+    `📱 Teléfono: ${phone}`,
+    `📍 Dirección: ${address}`,
+    `📅 Fecha deseada: ${date}`,
+    `🎀 Detalles: ${notes}`,
+    "",
+    "¿Me podrían confirmar disponibilidad y precios? ¡Muchas gracias! 💗"
+  ].join("\n");
+}
+
+async function shareOrder(event) {
+  event.preventDefault();
+
+  if (!cart.length) return;
+
+  const sendButton = document.getElementById("send-order");
+  sendButton.disabled = true;
+  sendButton.textContent = "Preparando tu pedido...";
+
+  const message = createOrderMessage();
+
+  try {
+    const files = [];
+
+    // Obtener las fotos reales de los productos del carrito
+    for (const item of cart) {
+      const product = products.find(p => p.id === item.id);
+
+      try {
+        const response = await fetch("imagenes/" + product.photo);
+
+        if (!response.ok) continue;
+
+        const blob = await response.blob();
+
+        const file = new File(
+          [blob],
+          product.photo,
+          {type:blob.type || "image/jpeg"}
+        );
+
+        files.push(file);
+      } catch (photoError) {
+        console.warn("No se pudo cargar la foto:",product.photo);
+      }
+    }
+
+    // Compartir el texto y las imágenes desde el menú del celular
+    if (
+      files.length > 0 &&
+      navigator.share &&
+      navigator.canShare &&
+      navigator.canShare({files})
+    ) {
+      await navigator.share({
+        title:"Pedido para ALENA",
+        text:message,
+        files:files
+      });
+
+      closeModal("checkout-overlay");
+      return;
+    }
+
+    // Alternativa: WhatsApp con texto y enlaces a las fotos
+    const imageLinks = [];
+
+    if (location.protocol !== "file:") {
+      for (const item of cart) {
+        const product = products.find(p => p.id === item.id);
+        const imageURL = new URL(
+          "imagenes/" + product.photo,
+          document.baseURI
+        ).href;
+
+        imageLinks.push(`📷 Foto de ${product.name}: ${imageURL}`);
+      }
+    }
+
+    const fallbackMessage = [
+      message,
+      "",
+      "📸 FOTOS DE LOS PRODUCTOS:",
+      ...(imageLinks.length ? imageLinks : [
+        "Las fotografías se pueden adjuntar manualmente en WhatsApp."
+      ])
+    ].join("\n");
+
+    window.open(
+      "https://wa.me/" + WHATSAPP + "?text=" +
+      encodeURIComponent(fallbackMessage),
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+    closeModal("checkout-overlay");
+
+    alert(
+      "Tu pedido está preparado. Si no se compartieron las fotos, puedes adjuntarlas desde la galería de tu celular."
+    );
+
+  } catch (error) {
+    if (error.name === "AbortError") return;
+
+    const url = "https://wa.me/" + WHATSAPP +
+      "?text=" + encodeURIComponent(message);
+
+    window.open(url,"_blank","noopener,noreferrer");
+
+    alert(
+      "No se pudieron compartir las fotos automáticamente. Puedes adjuntarlas manualmente en WhatsApp."
+    );
+
+  } finally {
+    sendButton.disabled = false;
+    sendButton.textContent = "📸 Compartir pedido y fotos";
+  }
+}
+
+document.getElementById("checkout-form")
+  .addEventListener("submit",shareOrder);
+
+renderCategories();
+renderProducts();
+updateCartCount();
+</script>
+
+</body>
+</html>
