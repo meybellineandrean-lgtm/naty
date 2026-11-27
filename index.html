@@ -1,809 +1,831 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f9e5ef">
-<title>ALENA | La Magia de Transformar</title>
-<meta name="description" content="Creaciones artesanales hechas con amor. Flores, ramos, llaveros, cuadros y regalos personalizados.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alena · La Magia de Transformar | Detalles Artesanales</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-cream: #FFFDF9;
+      --pastel-pink: #FFD6E0;
+      --pastel-pink-deep: #E58C9E;
+      --pastel-lilac: #E8DFF5;
+      --pastel-lilac-deep: #9D81BA;
+      --pastel-blue: #D6EFFF;
+      --pastel-mint: #DCF5EC;
+      --pastel-peach: #FFE8D6;
+      --text-main: #4A3F48;
+      --text-soft: #7E6F7B;
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      background-image:
+        radial-gradient(circle at 8% 12%, rgba(255, 214, 224, 0.45) 0%, transparent 32%),
+        radial-gradient(circle at 92% 18%, rgba(232, 223, 245, 0.5) 0%, transparent 34%),
+        radial-gradient(circle at 18% 72%, rgba(214, 239, 255, 0.45) 0%, transparent 36%),
+        radial-gradient(circle at 85% 85%, rgba(220, 245, 236, 0.45) 0%, transparent 34%);
+      background-attachment: fixed;
+    }
 
-<style>
-:root {
-  --pink:#e9a9c5;
-  --pink-dark:#bd6f98;
-  --pink-light:#fff0f6;
-  --lilac:#d9c8f2;
-  --turquoise:#bce9e5;
-  --cream:#fffaf7;
-  --text:#514451;
-  --white:#fff;
-  --shadow:0 8px 25px rgba(130,85,115,.12);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:'DM Sans',sans-serif;
-  color:var(--text);
-  background:var(--cream);
-  line-height:1.6;
-}
-button,input,textarea{font:inherit}
-button{cursor:pointer}
-a{color:inherit;text-decoration:none}
-.container{width:min(1150px,92%);margin:auto}
+    .font-serif-brand {
+      font-family: 'Cormorant Garamond', serif;
+    }
 
-header{
-  background:rgba(255,250,247,.97);
-  position:sticky;
-  top:0;
-  z-index:100;
-  box-shadow:0 2px 15px rgba(0,0,0,.06);
-}
-.nav{
-  min-height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{
-  width:55px;height:55px;
-  object-fit:contain;border-radius:50%;
-}
-.brand strong{
-  font-family:'Playfair Display',serif;
-  font-size:27px;color:var(--pink-dark);
-  letter-spacing:2px;
-}
-.brand small{
-  display:block;font-size:10px;letter-spacing:1px;
-}
-nav{display:flex;align-items:center;gap:22px}
-nav a{font-size:14px;font-weight:700}
-nav a:hover{color:var(--pink-dark)}
-.cart-button,.primary-button{
-  border:0;border-radius:30px;
-  padding:11px 18px;
-  background:var(--pink-dark);
-  color:white;font-weight:700;
-}
-.cart-button:hover,.primary-button:hover{filter:brightness(.94)}
-.menu-button{
-  display:none;background:var(--pink-light);
-  border:0;padding:9px 12px;
-  border-radius:10px;font-size:20px;
-}
+    .glass-pastel {
+      background: rgba(255, 253, 249, 0.86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(229, 140, 158, 0.22);
+    }
 
-.hero{
-  padding:75px 0;
-  background:linear-gradient(120deg,#fff0f6,#f4edff 55%,#e7f8f5);
-}
-.hero-content{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  align-items:center;gap:45px;
-}
-.eyebrow{
-  color:var(--pink-dark);
-  font-weight:800;text-transform:uppercase;
-  letter-spacing:2px;font-size:12px;
-}
-h1,h2,h3{font-family:'Playfair Display',serif}
-.hero h1{
-  font-size:clamp(42px,6vw,68px);
-  line-height:1.12;margin:15px 0;
-}
-.hero h1 span{color:var(--pink-dark)}
-.hero p{max-width:540px;margin-bottom:25px;color:#766779}
-.hero-image{
-  background:white;padding:15px;
-  border-radius:35px;box-shadow:var(--shadow);
-  transform:rotate(2deg);
-}
-.hero-image img{
-  width:100%;height:360px;
-  object-fit:cover;border-radius:25px;
-}
+    .card-pastel {
+      background: #FFFFFF;
+      border: 1.5px solid #F7E8EC;
+      border-radius: 1.75rem;
+      box-shadow: 0 10px 30px -12px rgba(180, 140, 155, 0.16);
+      transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
 
-.section{padding:70px 0}
-.section-heading{text-align:center;margin-bottom:35px}
-.section-heading h2{
-  font-size:clamp(30px,4vw,42px);
-  margin:7px 0;
-}
-.section-heading p{color:#897b89}
+    .card-pastel:hover {
+      transform: translateY(-4px);
+      border-color: #F4B8C6;
+      box-shadow: 0 18px 36px -14px rgba(229, 140, 158, 0.28);
+    }
 
-.categories{
-  display:flex;justify-content:center;
-  flex-wrap:wrap;gap:10px;margin-bottom:30px;
-}
-.category-button{
-  border:1px solid #ead7e3;
-  background:white;color:var(--text);
-  padding:9px 16px;border-radius:25px;
-  font-size:13px;font-weight:700;
-}
-.category-button.active,.category-button:hover{
-  background:var(--pink-dark);
-  color:white;border-color:var(--pink-dark);
-}
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:22px;
-}
-.product-card{
-  background:white;border-radius:19px;
-  overflow:hidden;box-shadow:var(--shadow);
-  transition:transform .2s;
-}
-.product-card:hover{transform:translateY(-4px)}
-.product-image{
-  height:230px;background:#f8edf3;overflow:hidden;
-}
-.product-image img{
-  width:100%;height:100%;object-fit:cover;
-}
-.product-info{padding:16px}
-.product-info h3{font-size:19px;margin-bottom:4px}
-.product-category{
-  font-size:11px;color:var(--pink-dark);
-  font-weight:800;
-}
-.product-price{
-  font-size:13px;color:#857488;margin:8px 0 13px;
-}
-.add-button{
-  width:100%;border:0;border-radius:12px;
-  padding:10px;background:var(--pink-light);
-  color:var(--pink-dark);font-weight:800;
-}
-.add-button:hover{background:var(--pink-dark);color:white}
-.empty-message{
-  grid-column:1/-1;text-align:center;
-  padding:35px;color:#88798b;
-}
+    .pill-active {
+      background: linear-gradient(135deg, #F6B8C8 0%, #D9C4EC 100%);
+      color: #3E323B;
+      border-color: transparent;
+      box-shadow: 0 6px 16px -4px rgba(217, 196, 236, 0.65);
+    }
 
-.about{
-  background:linear-gradient(120deg,#f5efff,#eaf9f6);
-}
-.about-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-}
-.about-card{
-  background:rgba(255,255,255,.85);
-  padding:25px;border-radius:20px;text-align:center;
-}
-.about-card .emoji{font-size:34px}
-.about-card h3{font-size:21px;margin:10px}
+    .btn-pastel-primary {
+      background: linear-gradient(135deg, #F5B0C2 0%, #D7BEEB 100%);
+      color: #3D313A;
+      font-weight: 700;
+      transition: all 0.22s ease;
+    }
 
-.contact-box{
-  background:white;border-radius:25px;
-  padding:35px;box-shadow:var(--shadow);
-  text-align:center;
-}
-.contact-box p{margin:10px 0 20px;color:#857488}
-.whatsapp-button{
-  display:inline-block;background:#238d63;
-  color:white;padding:12px 22px;
-  border-radius:30px;font-weight:800;
-}
-footer{
-  background:#59495b;color:white;
-  text-align:center;padding:30px 15px;
-}
-footer p{font-size:13px;opacity:.85}
+    .btn-pastel-primary:hover {
+      filter: brightness(0.97);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px -6px rgba(229, 140, 158, 0.55);
+    }
 
-.overlay{
-  position:fixed;inset:0;
-  background:rgba(30,20,30,.45);
-  z-index:200;display:none;
-}
-.overlay.show{display:block}
-.cart-panel{
-  position:fixed;z-index:201;
-  right:-460px;top:0;
-  width:min(440px,100%);
-  height:100%;background:white;
-  padding:24px;overflow-y:auto;
-  transition:right .25s;
-}
-.cart-panel.show{right:0}
-.cart-header{
-  display:flex;justify-content:space-between;
-  align-items:center;border-bottom:1px solid #eee;
-  padding-bottom:15px;
-}
-.cart-header h2{font-size:27px}
-.close-button{
-  border:0;background:var(--pink-light);
-  border-radius:50%;width:38px;height:38px;
-  font-size:20px;
-}
-.cart-items{padding:15px 0}
-.cart-item{
-  display:grid;grid-template-columns:65px 1fr auto;
-  gap:12px;align-items:center;
-  padding:12px 0;border-bottom:1px solid #f0e8ee;
-}
-.cart-item img{
-  width:65px;height:65px;
-  object-fit:cover;border-radius:10px;
-}
-.cart-item h3{font-size:15px}
-.cart-item small{color:#8d7d8e}
-.quantity{
-  display:flex;align-items:center;
-  gap:8px;margin-top:6px;
-}
-.quantity button{
-  border:0;background:var(--pink-light);
-  border-radius:7px;width:25px;height:25px;
-  font-weight:bold;
-}
-.remove-button{
-  border:0;background:none;
-  color:#b66c8d;font-size:12px;
-}
-.cart-total{
-  display:flex;justify-content:space-between;
-  padding:15px 0;font-weight:800;
-  border-top:1px solid #eee;
-}
-.checkout h3{font-size:23px;margin:15px 0}
-.checkout label{
-  display:block;font-size:13px;
-  font-weight:700;margin:10px 0 5px;
-}
-.checkout input,.checkout textarea{
-  width:100%;padding:11px;
-  border:1px solid #e6d9e2;border-radius:10px;
-  background:#fffafd;color:var(--text);
-}
-.checkout textarea{min-height:75px;resize:vertical}
-.checkout .primary-button{width:100%;margin:15px 0}
-.note{font-size:12px;color:#8d7d8e}
-.toast{
-  position:fixed;bottom:20px;left:50%;
-  transform:translateX(-50%);
-  background:#59495b;color:white;
-  padding:12px 20px;border-radius:30px;
-  z-index:300;display:none;
-  box-shadow:var(--shadow);font-size:14px;
-}
-.toast.show{display:block}
+    .btn-whatsapp-pastel {
+      background: linear-gradient(135deg, #B8ECD4 0%, #98DEC0 100%);
+      color: #214E3B;
+      font-weight: 700;
+      transition: all 0.22s ease;
+    }
 
-@media(max-width:900px){
-  .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-  nav{gap:12px}
-}
-@media(max-width:650px){
-  .nav{min-height:68px}
-  .brand img{width:45px;height:45px}
-  .brand strong{font-size:23px}
-  .menu-button{display:block}
-  nav{
-    display:none;position:absolute;
-    top:68px;left:0;right:0;
-    background:var(--cream);padding:18px;
-    flex-direction:column;box-shadow:var(--shadow);
-  }
-  nav.open{display:flex}
-  .hero{padding:48px 0}
-  .hero-content{grid-template-columns:1fr;gap:25px}
-  .hero-image img{height:270px}
-  .section{padding:50px 0}
-  .product-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:13px;
-  }
-  .product-image{height:175px}
-  .product-info{padding:12px}
-  .product-info h3{font-size:16px}
-  .about-grid{grid-template-columns:1fr}
-  .contact-box{padding:25px 17px}
-}
-@media(max-width:360px){
-  .product-grid{grid-template-columns:1fr}
-  .product-image{height:240px}
-}
-</style>
+    .btn-whatsapp-pastel:hover {
+      filter: brightness(0.97);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px -6px rgba(152, 222, 192, 0.65);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
 </head>
+<body class="min-h-screen flex flex-col">
 
-<body>
+  <!-- Selector oculto para vincular carpeta o logo -->
+  <input type="file" id="bulkFolderInput" multiple accept="image/*" class="hidden" />
+  <input type="file" id="singlePhotoInput" accept="image/*" class="hidden" />
 
-<header>
-  <div class="container nav">
-    <a href="#inicio" class="brand">
-      <img src="logo.jpg" alt="Logo de ALENA">
-      <span>
-        <strong>ALENA</strong>
-        <small>LA MAGIA DE TRANSFORMAR</small>
-      </span>
-    </a>
+  <!-- Navegación Superior -->
+  <header class="sticky top-0 z-40 glass-pastel">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3.5">
+        <div class="w-14 h-14 rounded-2xl bg-white border-2 border-[#FFD6E0] shadow-sm overflow-hidden flex items-center justify-center shrink-0">
+          <img
+            id="navLogoImg"
+            src="logo.jpg"
+            alt="Logo Alena"
+            class="w-full h-full object-contain p-0.5"
+            onerror="this.style.display='none'; document.getElementById('navLogoFallback').classList.remove('hidden');"
+          />
+          <div id="navLogoFallback" class="hidden text-center">
+            <span class="font-serif-brand italic text-xl font-bold text-[#D97A90]">Alena</span>
+          </div>
+        </div>
+        <div>
+          <h1 class="font-serif-brand italic text-2xl sm:text-3xl font-bold tracking-tight text-[#4A3F48] leading-none">
+            Alena
+          </h1>
+          <p class="text-[11px] sm:text-xs font-semibold text-[#9D81BA] tracking-wider uppercase mt-0.5">
+            La Magia de Transformar
+          </p>
+        </div>
+      </div>
 
-    <button class="menu-button" id="menuButton" aria-label="Abrir menú">☰</button>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button
+          onclick="document.getElementById('bulkFolderInput').click()"
+          class="px-3.5 py-2 rounded-full bg-[#E8DFF5]/70 hover:bg-[#E8DFF5] text-[#5B4870] text-xs font-bold border border-[#D7C6EE] transition flex items-center gap-1.5"
+          title="Selecciona tus fotos si abres la vista previa fuera de tu carpeta"
+        >
+          <span>🌸</span>
+          <span class="hidden sm:inline">Cargar Fotos</span>
+        </button>
 
-    <nav id="mainNav">
-      <a href="#inicio">Inicio</a>
-      <a href="#catalogo">Catálogo</a>
-      <a href="#personaliza">Personaliza</a>
-      <a href="#contacto">Contacto</a>
-      <button class="cart-button" id="openCart">
-        🛍️ Carrito (<span id="cartCount">0</span>)
-      </button>
-    </nav>
-  </div>
-</header>
+        <button
+          onclick="toggleCart(true)"
+          class="relative px-4 py-2.5 rounded-full btn-pastel-primary text-xs sm:text-sm flex items-center gap-2 shadow-sm"
+        >
+          <span>🧺</span>
+          <span>Mi Pedido</span>
+          <span
+            id="cartBadge"
+            class="min-w-[22px] h-[22px] px-1.5 rounded-full bg-white text-[#C4677E] text-xs font-bold flex items-center justify-center shadow-xs"
+          >
+            0
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<main>
-<section class="hero" id="inicio">
-  <div class="container hero-content">
-    <div>
-      <span class="eyebrow">Detalles hechos con amor</span>
-      <h1>Pequeños detalles,<br><span>grandes emociones.</span></h1>
-      <p>
-        En ALENA transformamos la creatividad en recuerdos especiales.
-        Descubre flores, ramos, accesorios y regalos artesanales
-        elaborados con dedicación para cada ocasión.
-      </p>
-      <a href="#catalogo" class="primary-button">Descubrir catálogo ✨</a>
+  <!-- Portada Pastel -->
+  <section class="max-w-7xl mx-auto w-full px-4 sm:px-6 pt-8 pb-6">
+    <div class="rounded-[2.25rem] bg-gradient-to-br from-[#FFF0F4] via-[#F7F2FC] to-[#EEF8FF] border border-[#F5DCE3] p-6 sm:p-10 shadow-sm relative overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-4 text-center lg:text-left">
+          <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/90 border border-[#FFD6E0] text-xs font-bold text-[#B86479] shadow-2xs">
+            ✨ Hecho a mano con limpiapipas · 100% Personalizado
+          </span>
+          <h2 class="font-serif-brand text-4xl sm:text-5xl lg:text-6xl font-bold text-[#4A3F48] leading-[1.08]">
+            Detalles únicos que guardan <span class="italic text-[#D4738B]">momentos mágicos</span>
+          </h2>
+          <p class="text-sm sm:text-base text-[#6E5F6B] max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            Elige tus flores, ramos temáticos, cuadros navideños, llaveros o lapiceros personalizados. Selecciona colores, cantidades y dedicatorias, y envíanos tu solicitud directo a WhatsApp para cotizar o agendar tu fecha.
+          </p>
+          <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            <a
+              href="#catalogo"
+              class="px-6 py-3 rounded-full btn-pastel-primary text-sm shadow-sm"
+            >
+              Explorar Catálogo
+            </a>
+            <button
+              onclick="sendDirectQuote()"
+              class="px-6 py-3 rounded-full bg-white hover:bg-[#FFF5F8] text-[#6A5666] border border-[#ECC8D2] text-sm font-bold transition flex items-center gap-2"
+            >
+              <span>💬</span>
+              <span>Cotizar Idea Personalizada</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="w-full max-w-sm bg-white/90 rounded-[2rem] p-4 border-2 border-white shadow-md">
+            <img
+              id="heroLogoImg"
+              src="logo.jpg"
+              alt="Alena La Magia de Transformar"
+              class="w-full h-56 sm:h-64 object-contain rounded-2xl"
+              onerror="this.src='foto14.jpg'; this.onerror=null;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buscador y Filtros por Categoría -->
+  <section id="catalogo" class="max-w-7xl mx-auto w-full px-4 sm:px-6 pt-4 pb-6 space-y-4">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <h3 class="font-serif-brand text-3xl font-bold text-[#4A3F48]">Nuestro Catálogo</h3>
+        <p class="text-xs sm:text-sm text-[#7E6F7B]">Toca cualquier diseño para elegir cantidad de flores, colores y detalles</p>
+      </div>
+
+      <div class="relative w-full md:w-80">
+        <input
+          type="text"
+          id="searchInput"
+          oninput="renderProducts()"
+          placeholder="Buscar lirios, navidad, llaveros, cuadros..."
+          class="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-[#EED6DD] text-sm text-[#4A3F48] placeholder-[#A896A4] focus:outline-none focus:border-[#E58C9E]"
+        />
+        <span class="absolute left-3.5 top-2.5 text-sm">🔍</span>
+      </div>
     </div>
 
-    <div class="hero-image">
-      <img src="foto35.jpeg" alt="Creación artesanal de ALENA"
-           onerror="this.onerror=null;this.src='foto1.jpeg'">
-    </div>
-  </div>
-</section>
+    <!-- Pestañas de Categorías -->
+    <div id="categoryTabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2"></div>
+  </section>
 
-<section class="section" id="catalogo">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">Creaciones ALENA</span>
-      <h2>Nuestro catálogo</h2>
-      <p>Encuentra ese detalle especial para alguien especial.</p>
-    </div>
+  <!-- Cuadrícula de Productos -->
+  <main class="max-w-7xl mx-auto w-full px-4 sm:px-6 pb-16 flex-1">
+    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+  </main>
 
-    <div class="categories" id="categories"></div>
-    <div class="product-grid" id="productGrid"></div>
-  </div>
-</section>
+  <!-- Pie de Página -->
+  <footer class="bg-white/80 border-t border-[#F3DFE5] py-8 px-4 text-center space-y-2">
+    <p class="font-serif-brand italic text-2xl font-bold text-[#4A3F48]">Alena · La Magia de Transformar</p>
+    <p class="text-xs text-[#7E6F7B]">Artesanías en limpiapipas hechas a mano bajo pedido · El Salvador</p>
+    <p class="text-xs font-bold text-[#B86479]">WhatsApp Pedidos y Cotizaciones: +503 7996 5146</p>
+  </footer>
 
-<section class="section about" id="personaliza">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">Hecho especialmente para ti</span>
-      <h2>Personaliza tu detalle</h2>
-      <p>¡Tú imaginas, nosotros lo hacemos realidad!</p>
-    </div>
-
-    <div class="about-grid">
-      <article class="about-card">
-        <div class="emoji">💡</div>
-        <h3>Elige tu idea</h3>
-        <p>Cuéntanos qué creación tienes en mente y para qué ocasión la necesitas.</p>
-      </article>
-
-      <article class="about-card">
-        <div class="emoji">🎨</div>
-        <h3>Personalízala</h3>
-        <p>Escoge colores, detalles y elementos para hacerla especial.</p>
-      </article>
-
-      <article class="about-card">
-        <div class="emoji">🎁</div>
-        <h3>Haz tu pedido</h3>
-        <p>Escríbenos por WhatsApp para consultar precio y coordinar tu pedido.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="contacto">
-  <div class="container">
-    <div class="contact-box">
-      <span class="eyebrow">Estamos para ayudarte</span>
-      <h2>¿Tienes una idea especial?</h2>
-      <p>Escríbenos y juntos crearemos un detalle inolvidable.</p>
-      <a class="whatsapp-button"
-         href="https://wa.me/50379965146"
-         target="_blank" rel="noopener">
-        💬 Contactar por WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <h2>ALENA</h2>
-  <p>La Magia de Transformar ✨</p>
-  <p>Creaciones artesanales hechas con amor.</p>
-  <p>© <span id="year"></span> ALENA. Todos los derechos reservados.</p>
-</footer>
-
-<div class="overlay" id="overlay"></div>
-
-<aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras">
-  <div class="cart-header">
-    <h2>Tu carrito 🛍️</h2>
-    <button class="close-button" id="closeCart" aria-label="Cerrar carrito">×</button>
-  </div>
-
-  <div class="cart-items" id="cartItems"></div>
-
-  <div class="cart-total">
-    <span>Productos</span>
-    <span id="cartTotal">0</span>
-  </div>
-
-  <div class="checkout">
-    <h3>Datos para tu pedido</h3>
-
-    <form id="orderForm">
-      <label for="customerName">Nombre completo *</label>
-      <input id="customerName" required maxlength="100" placeholder="Tu nombre">
-
-      <label for="customerPhone">Número de teléfono *</label>
-      <input id="customerPhone" required type="tel" maxlength="25" placeholder="Tu número">
-
-      <label for="customerAddress">Dirección de entrega *</label>
-      <input id="customerAddress" required maxlength="200" placeholder="Lugar de entrega">
-
-      <label for="deliveryDate">Fecha deseada</label>
-      <input id="deliveryDate" type="date">
-
-      <label for="orderNotes">Detalles adicionales</label>
-      <textarea id="orderNotes" maxlength="500"
-        placeholder="Colores, dedicatoria u otros detalles..."></textarea>
-
-      <button class="primary-button" type="submit">
-        Enviar pedido por WhatsApp
+  <!-- Modal Personalizador de Producto -->
+  <div id="customizerModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#4A3F48]/40 backdrop-blur-xs">
+    <div class="bg-[#FFFDF9] border-2 border-[#F7DCE3] rounded-[2rem] max-w-2xl w-full max-h-[92vh] overflow-y-auto shadow-2xl p-6 sm:p-8 relative">
+      <button
+        onclick="closeCustomizer()"
+        class="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#FFF0F4] hover:bg-[#FFD6E0] text-[#7E6F7B] font-bold flex items-center justify-center transition"
+      >
+        ✕
       </button>
 
-      <p class="note">
-        Este formulario prepara tu mensaje. Revisa los datos y pulsa enviar
-        en WhatsApp para completar tu consulta. El precio se confirma por chat.
-      </p>
-    </form>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+        <div class="space-y-3">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-[#FFF5F8] border border-[#F3DCE3] relative">
+            <img id="modalImg" src="" alt="" class="w-full h-full object-cover" />
+          </div>
+          <button
+            onclick="triggerSinglePhotoReplace()"
+            class="w-full py-2 rounded-xl bg-[#F4EFFB] hover:bg-[#E8DFF5] text-[#6B5485] text-xs font-bold transition"
+          >
+            📷 Cambiar foto de muestra
+          </button>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <span id="modalCategory" class="inline-block px-3 py-1 rounded-full bg-[#FFD6E0]/60 text-[#9E4E63] text-[11px] font-bold"></span>
+            <h4 id="modalTitle" class="font-serif-brand text-3xl font-bold text-[#4A3F48] mt-1"></h4>
+            <p id="modalDesc" class="text-xs text-[#7E6F7B] mt-1 leading-relaxed"></p>
+          </div>
+
+          <!-- Cantidad de flores / piezas -->
+          <div>
+            <label id="qtyLabel" class="block text-xs font-bold text-[#5E4F5B] mb-1.5">
+              Cantidad de flores o piezas en el arreglo
+            </label>
+            <div class="flex flex-wrap gap-1.5 mb-2" id="qtyPresets"></div>
+            <input
+              type="text"
+              id="customQtyInput"
+              placeholder="Ej. Ramo de 12 flores, par, 1 unidad..."
+              class="w-full px-3.5 py-2 rounded-xl bg-white border border-[#EBD4DC] text-xs focus:outline-none focus:border-[#E58C9E]"
+            />
+          </div>
+
+          <!-- Colores -->
+          <div>
+            <label class="block text-xs font-bold text-[#5E4F5B] mb-1.5">
+              Elige los colores (puedes combinar varios)
+            </label>
+            <div class="flex flex-wrap gap-2 mb-2" id="colorSwatches"></div>
+            <input
+              type="text"
+              id="customColorInput"
+              placeholder="Colores elegidos (ej. Rosa pastel y blanco)"
+              class="w-full px-3.5 py-2 rounded-xl bg-white border border-[#EBD4DC] text-xs focus:outline-none focus:border-[#E58C9E]"
+            />
+          </div>
+
+          <!-- Detalles / Nombre / Temática -->
+          <div>
+            <label class="block text-xs font-bold text-[#5E4F5B] mb-1.5">
+              Personalización (nombre, dedicatoria, personaje o luz LED)
+            </label>
+            <textarea
+              id="customNoteInput"
+              rows="2"
+              placeholder="Ej. Con el nombre 'Mariana', agregar luces LED o temática específica..."
+              class="w-full px-3.5 py-2 rounded-xl bg-white border border-[#EBD4DC] text-xs focus:outline-none focus:border-[#E58C9E]"
+            ></textarea>
+          </div>
+
+          <!-- Cantidad de arreglos -->
+          <div class="flex items-center justify-between pt-1">
+            <span class="text-xs font-bold text-[#5E4F5B]">¿Cuántos pedidos iguales deseas?</span>
+            <div class="flex items-center gap-3 bg-white border border-[#EBD4DC] rounded-full px-3 py-1">
+              <button onclick="changeOrderUnits(-1)" class="text-sm font-bold text-[#B86479] px-1">−</button>
+              <span id="orderUnitsDisplay" class="text-sm font-bold text-[#4A3F48]">1</span>
+              <button onclick="changeOrderUnits(1)" class="text-sm font-bold text-[#B86479] px-1">+</button>
+            </div>
+          </div>
+
+          <button
+            onclick="addToCart()"
+            class="w-full py-3.5 rounded-full btn-pastel-primary text-sm shadow-md mt-2"
+          >
+            ✨ Agregar a Mi Pedido
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
-</aside>
 
-<div class="toast" id="toast" role="status"></div>
+  <!-- Cajón Lateral del Carrito y Registro -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 hidden justify-end bg-[#4A3F48]/40 backdrop-blur-xs">
+    <div class="bg-[#FFFDF9] w-full max-w-md h-full flex flex-col border-l-2 border-[#F7DCE3] shadow-2xl">
+      <div class="p-5 border-b border-[#F3DFE5] flex items-center justify-between bg-[#FFF6F9]">
+        <div>
+          <h4 class="font-serif-brand text-2xl font-bold text-[#4A3F48]">Tu Pedido Personalizado</h4>
+          <p class="text-xs text-[#7E6F7B]">Completa tus datos para enviar a WhatsApp</p>
+        </div>
+        <button
+          onclick="toggleCart(false)"
+          class="w-9 h-9 rounded-full bg-white text-[#7E6F7B] font-bold flex items-center justify-center border border-[#F0D6DE]"
+        >
+          ✕
+        </button>
+      </div>
 
-<script>
-const WHATSAPP_NUMBER = "50379965146";
+      <!-- Lista de productos agregados -->
+      <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-3"></div>
 
-const products = [
-  {id:1,name:"Ramo de flores",photo:"foto1.jpeg",category:"Ramos y flores"},
-  {id:2,name:"Decoración floral",photo:"foto2.jpeg",category:"Decoraciones florales"},
-  {id:3,name:"Alas decorativas para tumbas",photo:"foto3.jpeg",category:"Arreglos para difuntos"},
-  {id:4,name:"Arreglo floral azul",photo:"foto4.jpeg",category:"Decoraciones florales"},
-  {id:5,name:"Ramo de girasoles",photo:"foto5.jpeg",category:"Girasoles y macetitas"},
-  {id:6,name:"Decoración de flores",photo:"foto6.jpeg",category:"Decoraciones florales"},
-  {id:7,name:"Llavero personalizado",photo:"foto7.jpeg",category:"Llaveros y personajes"},
-  {id:8,name:"Ramo de Hot Wheels",photo:"foto8.jpeg",category:"Hot Wheels"},
-  {id:9,name:"Macetita de girasol",photo:"foto9.jpeg",category:"Girasoles y macetitas"},
-  {id:10,name:"Ramo personalizado",photo:"foto10.jpeg",category:"Ramos personalizados"},
-  {id:11,name:"Arreglo de Hot Wheels",photo:"foto11.jpeg",category:"Hot Wheels"},
-  {id:12,name:"Llavero personalizado",photo:"foto12.jpeg",category:"Llaveros y personajes"},
-  {id:13,name:"Llavero de flores",photo:"foto13.jpeg",category:"Llaveros y personajes"},
-  {id:14,name:"Ramo de flores rosadas",photo:"foto14.jpeg",category:"Ramos y flores"},
-  {id:15,name:"Personaje personalizado",photo:"foto15.jpeg",category:"Llaveros y personajes"},
-  {id:16,name:"Lapiceros personalizados",photo:"foto16.jpeg",category:"Lapiceros y accesorios"},
-  {id:17,name:"Accesorios personalizados",photo:"foto17.jpeg",category:"Lapiceros y accesorios"},
-  {id:18,name:"Personaje de panda",photo:"foto18.jpeg",category:"Llaveros y personajes"},
-  {id:19,name:"Personaje personalizado",photo:"foto19.jpeg",category:"Llaveros y personajes"},
-  {id:20,name:"Ramo de Hot Wheels",photo:"foto20.jpeg",category:"Hot Wheels"},
-  {id:21,name:"Ramo de flores",photo:"foto21.jpeg",category:"Ramos y flores"},
-  {id:22,name:"Personaje decorativo",photo:"foto22.jpeg",category:"Llaveros y personajes"},
-  {id:23,name:"Personaje decorativo",photo:"foto23.jpeg",category:"Llaveros y personajes"},
-  {id:24,name:"Flor artesanal",photo:"foto24.jpeg",category:"Flores individuales"},
-  {id:25,name:"Girasol artesanal",photo:"foto25.jpeg",category:"Flores individuales"},
-  {id:26,name:"Flores decorativas",photo:"foto26.jpeg",category:"Flores individuales"},
-  {id:27,name:"Llavero personalizado",photo:"foto27.jpeg",category:"Llaveros y personajes"},
-  {id:28,name:"Personaje de ranita",photo:"foto28.jpeg",category:"Llaveros y personajes"},
-  {id:29,name:"Personaje personalizado",photo:"foto29.jpeg",category:"Llaveros y personajes"},
-  {id:30,name:"Personaje de pollito",photo:"foto30.jpeg",category:"Llaveros y personajes"},
-  {id:31,name:"Ramo personalizado",photo:"foto31.jpeg",category:"Ramos personalizados"},
-  {id:32,name:"Ramo de personajes",photo:"foto32.jpeg",category:"Ramos personalizados"},
-  {id:33,name:"Ramo personalizado",photo:"foto33.jpeg",category:"Ramos personalizados"},
-  {id:34,name:"Cuadro navideño",photo:"foto34.jpeg",category:"Cuadros personalizados"},
-  {id:35,name:"Cuadro floral iluminado",photo:"foto35.jpeg",category:"Cuadros personalizados"},
-  {id:36,name:"Cuadro de cumpleaños",photo:"foto36.jpeg",category:"Cuadros personalizados"},
-  {id:37,name:"Cuadro floral personalizado",photo:"foto37.jpeg",category:"Cuadros personalizados"},
-  {id:38,name:"Cuadro navideño personalizado",photo:"foto38.jpeg",category:"Cuadros personalizados"},
-  {id:39,name:"Ramo de Spider-Man",photo:"foto39.jpeg",category:"Ramos personalizados"}
-];
+      <!-- Registro del Cliente y Envío a WhatsApp -->
+      <div class="p-5 bg-[#FAF6FD] border-t border-[#EAE0F5] space-y-3">
+        <p class="text-xs font-bold text-[#5B4870] uppercase tracking-wider">Datos para tu entrega o cotización</p>
 
-let cart = [];
-let selectedCategory = "Todos";
+        <div>
+          <input
+            type="text"
+            id="clientName"
+            placeholder="Tu nombre completo *"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DFD2EE] text-xs focus:outline-none focus:border-[#B86479]"
+          />
+        </div>
 
-const productGrid = document.getElementById("productGrid");
-const categoriesBox = document.getElementById("categories");
-const cartPanel = document.getElementById("cartPanel");
-const overlay = document.getElementById("overlay");
+        <div>
+          <label class="block text-[11px] font-bold text-[#7E6F7B] mb-1">¿Para qué fecha lo necesitas? *</label>
+          <input
+            type="date"
+            id="deliveryDate"
+            class="w-full px-3.5 py-2 rounded-xl bg-white border border-[#DFD2EE] text-xs text-[#4A3F48] focus:outline-none focus:border-[#B86479]"
+          />
+        </div>
 
-function showToast(message){
-  const toast=document.getElementById("toast");
-  toast.textContent=message;
-  toast.classList.add("show");
-  clearTimeout(showToast.timer);
-  showToast.timer=setTimeout(()=>{
-    toast.classList.remove("show");
-  },2400);
-}
+        <div>
+          <textarea
+            id="clientAddress"
+            rows="2"
+            placeholder="Dirección exacta de entrega o punto de referencia *"
+            class="w-full px-3.5 py-2 rounded-xl bg-white border border-[#DFD2EE] text-xs focus:outline-none focus:border-[#B86479]"
+          ></textarea>
+        </div>
 
-function renderCategories(){
-  const categories=["Todos",...new Set(products.map(p=>p.category))];
-  categoriesBox.innerHTML="";
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+          <button
+            onclick="submitToWhatsApp('cotizar')"
+            class="py-3 px-3 rounded-2xl bg-white hover:bg-[#FFF0F4] text-[#9E4E63] border-2 border-[#F4B8C6] text-xs font-bold transition flex items-center justify-center gap-1.5"
+          >
+            <span>💬</span>
+            <span>Cotizar Precio</span>
+          </button>
 
-  categories.forEach(category=>{
-    const button=document.createElement("button");
-    button.className="category-button"+
-      (selectedCategory===category?" active":"");
-    button.textContent=category;
+          <button
+            onclick="submitToWhatsApp('pedido')"
+            class="py-3 px-3 rounded-2xl btn-whatsapp-pastel text-xs flex items-center justify-center gap-1.5 shadow-sm"
+          >
+            <span>📲</span>
+            <span>Confirmar Pedido</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    button.addEventListener("click",()=>{
-      selectedCategory=category;
+  <script>
+    const WHATSAPP_NUMBER = "50379965146";
+
+    const CATEGORIES = [
+      { id: "todos", label: "✨ Todo el Catálogo" },
+      { id: "ramos", label: "🌷 Ramos y Flores" },
+      { id: "tematicos", label: "🎀 Ramos Temáticos y Cajas" },
+      { id: "navidad", label: "🎄 Colección Navidad" },
+      { id: "cuadros", label: "🖼️ Cuadros Personalizados" },
+      { id: "llaveros", label: "🧸 Llaveros y Figuras" },
+      { id: "lapiceros", label: "🖊️ Lapiceros" },
+      { id: "hogar", label: "🎀 Pelo y Cortinas" },
+      { id: "coronas", label: "🕊️ Coronas y Difuntos" }
+    ];
+
+    const PASTEL_COLORS = [
+      { name: "Rosa Pastel", hex: "#FFB5C8" },
+      { name: "Fucsia", hex: "#F26A9B" },
+      { name: "Lila Suave", hex: "#C9B1E8" },
+      { name: "Celeste", hex: "#9AD5F5" },
+      { name: "Azul Rey", hex: "#5C8CE6" },
+      { name: "Amarillo Girasol", hex: "#FFE07D" },
+      { name: "Blanco Perla", hex: "#FFFFFF" },
+      { name: "Rojo Vino", hex: "#D65A6D" },
+      { name: "Verde Navidad", hex: "#82C9A5" }
+    ];
+
+    const PRODUCTS = [
+      // RAMOS Y FLORES
+      { id: 1, title: "Ramo Dulce Primavera", category: "ramos", img: "foto1.jpg", desc: "Tulipanes y lirios en tonos rosa pastel con florecitas blancas y lazo satinado." },
+      { id: 2, title: "Ramo Lirios Rosados", category: "ramos", img: "foto14.jpg", desc: "Lirios detallados con borde blanco, mariposa decorativa y cinta dorada." },
+      { id: 3, title: "Ramo Girasol & Margaritas", category: "ramos", img: "foto5.jpg", desc: "Girasol central rodeado de margaritas en tonos rosa pastel y lila." },
+      { id: 4, title: "Ramo de Girasoles", category: "ramos", img: "foto21.jpeg", desc: "Ramo abundante de girasoles amarillos con envoltura lila pastel." },
+      { id: 5, title: "Girasol en Maceta con Luz", category: "ramos", img: "foto9.jpg", desc: "Girasol artesanal en macetita decorada con mini flores y luces LED." },
+      { id: 6, title: "Lirio Individual con Capullo", category: "ramos", img: "foto24.jpeg", desc: "Detalle individual de flor abierta con capullo y hojas verdes." },
+
+      // RAMOS TEMÁTICOS Y CAJAS
+      { id: 7, title: "Ramo Hello Kitty", category: "tematicos", img: "foto31.jpeg", desc: "Ternura total con caritas de Hello Kitty, lirios fucsia y perlas." },
+      { id: 8, title: "Ramo Perritos Tiernos", category: "tematicos", img: "foto32.jpeg", desc: "Ramo estilo Snoopy/Pochacco con florecitas blancas y lazo rosa." },
+      { id: 9, title: "Ramo Cinnamoroll Celeste", category: "tematicos", img: "foto33.jpeg", desc: "Diseño en tonos celeste nube y rosa pastel con tulipanes y lirio." },
+      { id: 10, title: "Ramo Hot Wheels Celeste", category: "tematicos", img: "foto11.jpg", desc: "Tulipanes y lirios azules personalizados con carritos Hot Wheels." },
+      { id: 11, title: "Ramo Hot Wheels Azul Rey", category: "tematicos", img: "foto20.jpeg", desc: "Arreglo en tonos azul profundo y negro con carritos coleccionables." },
+      { id: 12, title: "Caja Regalo Hot Wheels", category: "tematicos", img: "foto8.jpg", desc: "Caja personalizada con carritos, dulces y detalles hechos a mano." },
+      { id: 13, title: "Ramo Spiderman & Autos", category: "tematicos", img: "foto10.jpg", desc: "Tulipanes temáticos de Spiderman combinados con lirios azules." },
+      { id: 14, title: "Ramo Spiderman Vino", category: "tematicos", img: "foto39.jpeg", desc: "Ramo elegante en tonos rojo vino y negro con lirios a juego." },
+
+      // COLECCIÓN NAVIDAD
+      { id: 15, title: "Cuadro Navideño Árbol Verde", category: "navidad", img: "foto34.jpeg", desc: "Marco con arbolito de limpiapipas iluminado, bastones y foto personalizada." },
+      { id: 16, title: "Cuadro Navideño Rosa Kitty", category: "navidad", img: "foto38.jpeg", desc: "Arbolito navideño rosa con perlas, foto y temática Hello Kitty." },
+      { id: 17, title: "Diademas Navideñas", category: "navidad", img: "foto22.jpeg", desc: "Diademas festivas hechas a mano con renos, arbolitos, moños y brillos." },
+      { id: 18, title: "Chonguitos Navideños", category: "navidad", img: "foto27.jpeg", desc: "Pares de chonguitos y moñitos navideños personalizados para niñas." },
+
+      // CUADROS PERSONALIZADOS
+      { id: 19, title: "Cuadro Tulipanes con Luz LED", category: "cuadros", img: "foto35.jpeg", desc: "Cuadro luminoso con tulipanes, fotos y dedicatoria especial." },
+      { id: 20, title: "Cuadro Floral Cumpleaños", category: "cuadros", img: "foto36.jpeg", desc: "Lirio rosa, tulipanes y margaritas con letrero dorado personalizado." },
+      { id: 21, title: "Cuadro Lavanda & Foto", category: "cuadros", img: "foto37.jpeg", desc: "Arreglo floral en tonos lila y morado con fotografía central." },
+      { id: 22, title: "Placa de Madera Pingüino", category: "cuadros", img: "foto23.jpeg", desc: "Adorno artesanal sobre base de madera con figura tierna." },
+
+      // LLAVEROS Y FIGURAS
+      { id: 23, title: "Llavero Panda con Nombre", category: "llaveros", img: "foto18.jpeg", desc: "Osito panda con trenza y cuentas con el nombre que elijas." },
+      { id: 24, title: "Llavero Kuromi Personalizado", category: "llaveros", img: "foto19.jpeg", desc: "Personaje Kuromi con dije de nombre en cuentas." },
+      { id: 25, title: "Llavero Muñequita con Nombre", category: "llaveros", img: "foto29.jpeg", desc: "Carita personalizada con cabello de colores y nombre en letras." },
+      { id: 26, title: "Llavero Cerezas & Perlas", category: "llaveros", img: "foto13.jpg", desc: "Cerezas rojas esponjosas con pulsera de perlas blancas." },
+      { id: 27, title: "Llavero Girasol", category: "llaveros", img: "foto25.jpeg", desc: "Mini girasol tejido en limpiapipas con hojitas verdes." },
+      { id: 28, title: "Llavero Inicial Personalizada", category: "llaveros", img: "foto12.jpg", desc: "Letra inicial en tu color favorito con acabado brillante." },
+      { id: 29, title: "Llavero Corazón Tejido", category: "llaveros", img: "foto7.jpg", desc: "Dije circular en tonos lila con corazón central." },
+      { id: 30, title: "Llavero Bob Esponja", category: "llaveros", img: "foto15.jpg", desc: "Figura artesanal de personaje hecha completamente a mano." },
+      { id: 31, title: "Figura Ranita Tierna", category: "llaveros", img: "foto28.jpeg", desc: "Adorno o llavero de ranita verde con detalles bordados." },
+      { id: 32, title: "Pollito Artesanal", category: "llaveros", img: "foto30.jpeg", desc: "Mini figura decorativa de pollito amarillo." },
+
+      // LAPICEROS
+      { id: 33, title: "Lapiceros con Nombre y Figura", category: "lapiceros", img: "foto16.jpeg", desc: "Forrados en limpiapipas con mariposa, luna o corazón y tu nombre." },
+      { id: 34, title: "Lapiceros Corazón Pareja", category: "lapiceros", img: "foto17.jpeg", desc: "Lapiceros personalizados con corazones y nombres." },
+
+      // PELO Y CORTINAS
+      { id: 35, title: "Ganchos para Cortinas Florales", category: "hogar", img: "foto26.jpeg", desc: "Sujetadores de cortina con flores grandes y centro de cristal." },
+      { id: 36, title: "Voladitos y Ganchos para el Pelo", category: "hogar", img: "foto27.jpeg", desc: "Accesorios para el cabello con corazones, flores y pedrería." },
+      { id: 37, title: "Alas Decorativas de Ángel", category: "hogar", img: "foto3.jpg", desc: "Alas artesanales en blanco y rosa para sesiones de fotos o disfraces." },
+
+      // CORONAS Y DIFUNTOS
+      { id: 38, title: "Corona Blanca Memorial", category: "coronas", img: "foto2.jpg", desc: "Corona circular de flores blancas con centro amarillo y hojas verdes." },
+      { id: 39, title: "Corona Corazón Azul y Blanco", category: "coronas", img: "foto4.jpg", desc: "Corona en forma de corazón para conmemoraciones y fechas especiales." },
+      { id: 40, title: "Corona Circular Floral", category: "coronas", img: "foto6.jpg", desc: "Corona decorativa de flores azules y blancas con lazo satinado." }
+    ];
+
+    let activeCategory = "todos";
+    let selectedProduct = null;
+    let selectedColorList = [];
+    let orderUnits = 1;
+    let cart = JSON.parse(localStorage.getItem("alena_pastel_cart") || "[]");
+    let uploadedImagesMap = {};
+    let replacingProductId = null;
+
+    function init() {
       renderCategories();
       renderProducts();
+      updateCartUI();
+
+      // Fecha mínima = hoy
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("deliveryDate").min = today;
+    }
+
+    function renderCategories() {
+      const container = document.getElementById("categoryTabs");
+      container.innerHTML = CATEGORIES.map(cat => {
+        const isActive = cat.id === activeCategory;
+        return `
+          <button
+            onclick="setCategory('${cat.id}')"
+            class="px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap border transition ${
+              isActive
+                ? "pill-active"
+                : "bg-white/90 text-[#6E5F6B] border-[#F0D6DE] hover:bg-[#FFF0F4]"
+            }"
+          >
+            ${cat.label}
+          </button>
+        `;
+      }).join("");
+    }
+
+    function setCategory(id) {
+      activeCategory = id;
+      renderCategories();
+      renderProducts();
+    }
+
+    function getProductImage(product) {
+      return uploadedImagesMap[product.img] || product.img;
+    }
+
+    function renderProducts() {
+      const query = document.getElementById("searchInput").value.toLowerCase().trim();
+      const grid = document.getElementById("productsGrid");
+
+      const filtered = PRODUCTS.filter(p => {
+        const matchesCat = activeCategory === "todos" || p.category === activeCategory;
+        const matchesQuery =
+          !query ||
+          p.title.toLowerCase().includes(query) ||
+          p.desc.toLowerCase().includes(query);
+        return matchesCat && matchesQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-14 bg-white/80 rounded-3xl border border-[#F3DCE3]">
+            <p class="font-serif-brand text-2xl font-bold text-[#4A3F48]">No encontramos ese diseño</p>
+            <p class="text-xs text-[#7E6F7B] mt-1">Pero en Alena lo creamos desde cero para ti. ¡Escríbenos tu idea!</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => {
+        const catObj = CATEGORIES.find(c => c.id === p.category);
+        const imgSrc = getProductImage(p);
+        return `
+          <div class="card-pastel overflow-hidden flex flex-col group">
+            <div class="aspect-[4/5] bg-[#FFF5F8] relative overflow-hidden">
+              <img
+                src="${imgSrc}"
+                alt="${p.title}"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22><rect width=%22400%22 height=%22500%22 fill=%22%23FFF0F4%22/><text x=%2250%25%22 y=%2248%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23B86479%22>Alena Artesanías</text><text x=%2250%25%22 y=%2254%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2213%22 fill=%22%238E7A89%22>${p.img}</text></svg>'"
+              />
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[11px] font-bold text-[#8E5365] shadow-2xs">
+                ${catObj ? catObj.label : ""}
+              </span>
+            </div>
+
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h4 class="font-serif-brand text-2xl font-bold text-[#4A3F48] leading-snug">${p.title}</h4>
+                <p class="text-xs text-[#7E6F7B] mt-1 line-clamp-2 leading-relaxed">${p.desc}</p>
+              </div>
+
+              <button
+                onclick="openCustomizer(${p.id})"
+                class="w-full py-2.5 px-4 rounded-full btn-pastel-primary text-xs flex items-center justify-center gap-1.5"
+              >
+                <span>🎨</span>
+                <span>Personalizar y Pedir</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function openCustomizer(productId) {
+      selectedProduct = PRODUCTS.find(p => p.id === productId);
+      if (!selectedProduct) return;
+
+      selectedColorList = [];
+      orderUnits = 1;
+
+      const catObj = CATEGORIES.find(c => c.id === selectedProduct.category);
+      document.getElementById("modalCategory").textContent = catObj ? catObj.label : "";
+      document.getElementById("modalTitle").textContent = selectedProduct.title;
+      document.getElementById("modalDesc").textContent = selectedProduct.desc;
+      document.getElementById("modalImg").src = getProductImage(selectedProduct);
+      document.getElementById("orderUnitsDisplay").textContent = "1";
+      document.getElementById("customColorInput").value = "";
+      document.getElementById("customNoteInput").value = "";
+
+      // Opciones sugeridas de cantidad según categoría
+      const isBouquet = ["ramos", "tematicos", "coronas"].includes(selectedProduct.category);
+      const presets = isBouquet
+        ? ["3 flores", "6 flores", "12 flores", "18 flores", "24 flores"]
+        : ["1 pieza", "Par (2 piezas)", "Set de 3", "Docena (12)"];
+
+      document.getElementById("customQtyInput").value = presets[0];
+      document.getElementById("qtyPresets").innerHTML = presets.map(preset => `
+        <button
+          type="button"
+          onclick="document.getElementById('customQtyInput').value='${preset}'"
+          class="px-2.5 py-1 rounded-full bg-[#FFF0F4] hover:bg-[#FFD6E0] text-[#7D4958] text-[11px] font-bold transition"
+        >
+          ${preset}
+        </button>
+      `).join("");
+
+      // Paleta de colores pastel
+      document.getElementById("colorSwatches").innerHTML = PASTEL_COLORS.map(c => `
+        <button
+          type="button"
+          onclick="toggleColor('${c.name}')"
+          class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-[#EBD4DC] hover:border-[#D4738B] text-[11px] font-semibold text-[#5E4F5B] transition"
+        >
+          <span class="w-3 h-3 rounded-full border border-black/10" style="background:${c.hex}"></span>
+          <span>${c.name}</span>
+        </button>
+      `).join("");
+
+      const modal = document.getElementById("customizerModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeCustomizer() {
+      const modal = document.getElementById("customizerModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function toggleColor(colorName) {
+      if (selectedColorList.includes(colorName)) {
+        selectedColorList = selectedColorList.filter(c => c !== colorName);
+      } else {
+        selectedColorList.push(colorName);
+      }
+      document.getElementById("customColorInput").value = selectedColorList.join(", ");
+    }
+
+    function changeOrderUnits(delta) {
+      orderUnits = Math.max(1, orderUnits + delta);
+      document.getElementById("orderUnitsDisplay").textContent = orderUnits;
+    }
+
+    function addToCart() {
+      if (!selectedProduct) return;
+
+      const qtyDetail = document.getElementById("customQtyInput").value.trim() || "Estándar";
+      const colors = document.getElementById("customColorInput").value.trim() || "Colores como en la foto";
+      const note = document.getElementById("customNoteInput").value.trim();
+
+      cart.push({
+        uid: Date.now(),
+        title: selectedProduct.title,
+        img: getProductImage(selectedProduct),
+        qtyDetail,
+        colors,
+        note,
+        units: orderUnits
+      });
+
+      saveCart();
+      updateCartUI();
+      closeCustomizer();
+      toggleCart(true);
+    }
+
+    function removeFromCart(uid) {
+      cart = cart.filter(item => item.uid !== uid);
+      saveCart();
+      updateCartUI();
+    }
+
+    function saveCart() {
+      localStorage.setItem("alena_pastel_cart", JSON.stringify(cart));
+    }
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((acc, item) => acc + item.units, 0);
+      document.getElementById("cartBadge").textContent = totalItems;
+
+      const container = document.getElementById("cartItemsContainer");
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 space-y-2">
+            <p class="text-3xl">🌷</p>
+            <p class="font-serif-brand text-xl font-bold text-[#4A3F48]">Tu canasta está vacía</p>
+            <p class="text-xs text-[#7E6F7B]">Selecciona cualquier producto del catálogo para personalizarlo.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = cart.map(item => `
+        <div class="bg-white rounded-2xl p-3.5 border border-[#F3DCE3] flex gap-3 items-start shadow-2xs">
+          <img src="${item.img}" alt="${item.title}" class="w-16 h-20 rounded-xl object-cover bg-[#FFF5F8] shrink-0" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between gap-2">
+              <h5 class="font-bold text-xs text-[#4A3F48] truncate">${item.units}x ${item.title}</h5>
+              <button onclick="removeFromCart(${item.uid})" class="text-[11px] text-[#C4677E] font-bold hover:underline">Quitar</button>
+            </div>
+            <p class="text-[11px] text-[#7E6F7B] mt-0.5">• Tamaño/Cant: <strong class="text-[#5E4F5B]">${item.qtyDetail}</strong></p>
+            <p class="text-[11px] text-[#7E6F7B]">• Colores: <strong class="text-[#5E4F5B]">${item.colors}</strong></p>
+            ${item.note ? `<p class="text-[11px] text-[#9D81BA] mt-0.5">• Detalle: ${item.note}</p>` : ""}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function toggleCart(open) {
+      const drawer = document.getElementById("cartDrawer");
+      if (open) {
+        drawer.classList.remove("hidden");
+        drawer.classList.add("flex");
+      } else {
+        drawer.classList.add("hidden");
+        drawer.classList.remove("flex");
+      }
+    }
+
+    function submitToWhatsApp(type) {
+      if (cart.length === 0) {
+        alert("Agrega primero al menos un producto a tu pedido.");
+        return;
+      }
+
+      const name = document.getElementById("clientName").value.trim();
+      const date = document.getElementById("deliveryDate").value;
+      const address = document.getElementById("clientAddress").value.trim();
+
+      if (!name || !date || !address) {
+        alert("Por favor completa tu nombre completo, fecha de entrega y dirección.");
+        return;
+      }
+
+      const headerLine =
+        type === "pedido"
+          ? `Hola *Alena*, *${name}* solicitó un pedido para el día *${date}*.`
+          : `Hola *Alena*, *${name}* solicita *cotizar precio* para el día *${date}*.`;
+
+      const itemsLines = cart.map((item, idx) => {
+        let line = `${idx + 1}. *${item.units}x ${item.title}* (${item.qtyDetail}) — Colores: ${item.colors}`;
+        if (item.note) line += ` | Personalización: ${item.note}`;
+        return line;
+      }).join("\n");
+
+      const fullMessage =
+        `${headerLine}\n\n` +
+        `📍 *Dirección:* ${address}\n\n` +
+        `🌷 *Detalle solicitado:*\n${itemsLines}\n\n` +
+        `✨ Enviado desde la web de *Alena · La Magia de Transformar*`;
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(fullMessage)}`;
+      window.open(url, "_blank");
+    }
+
+    function sendDirectQuote() {
+      const msg = "Hola *Alena*, me gustaría cotizar un diseño personalizado hecho en limpiapipas. ✨";
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
+    }
+
+    // Carga masiva de carpeta de imágenes (logo.jpg + foto1...foto39)
+    document.getElementById("bulkFolderInput").addEventListener("change", (e) => {
+      const files = Array.from(e.target.files || []);
+      if (!files.length) return;
+
+      files.forEach(file => {
+        const lowerName = file.name.toLowerCase();
+        const objectUrl = URL.createObjectURL(file);
+        uploadedImagesMap[lowerName] = objectUrl;
+
+        if (lowerName.includes("logo")) {
+          const navLogo = document.getElementById("navLogoImg");
+          navLogo.src = objectUrl;
+          navLogo.style.display = "block";
+          document.getElementById("navLogoFallback").classList.add("hidden");
+          document.getElementById("heroLogoImg").src = objectUrl;
+        }
+      });
+
+      renderProducts();
+      alert(`¡Listo! Se vincularon ${files.length} imágenes de tu carpeta.`);
     });
 
-    categoriesBox.appendChild(button);
-  });
-}
-
-function renderProducts(){
-  productGrid.innerHTML="";
-
-  const filtered=selectedCategory==="Todos"
-    ?products
-    :products.filter(p=>p.category===selectedCategory);
-
-  if(!filtered.length){
-    productGrid.innerHTML=
-      '<p class="empty-message">No hay productos en esta categoría.</p>';
-    return;
-  }
-
-  filtered.forEach(product=>{
-    const card=document.createElement("article");
-    card.className="product-card";
-
-    const imageBox=document.createElement("div");
-    imageBox.className="product-image";
-
-    const img=document.createElement("img");
-    img.src=product.photo;
-    img.alt=product.name;
-    img.loading="lazy";
-
-    img.onerror=function(){
-      this.onerror=null;
-      this.alt="No se encontró "+product.photo;
-      this.src="data:image/svg+xml;charset=UTF-8,"+
-        encodeURIComponent(
-          '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300">'+
-          '<rect width="100%" height="100%" fill="#f8edf3"/>'+
-          '<text x="50%" y="48%" text-anchor="middle" fill="#bd6f98" font-size="20">Foto no encontrada</text>'+
-          '<text x="50%" y="60%" text-anchor="middle" fill="#88798b" font-size="15">'+product.photo+'</text>'+
-          '</svg>'
-        );
-    };
-
-    imageBox.appendChild(img);
-
-    const info=document.createElement("div");
-    info.className="product-info";
-
-    const category=document.createElement("div");
-    category.className="product-category";
-    category.textContent=product.category;
-
-    const name=document.createElement("h3");
-    name.textContent=product.name;
-
-    const price=document.createElement("p");
-    price.className="product-price";
-    price.textContent="Precio: consultar";
-
-    const button=document.createElement("button");
-    button.className="add-button";
-    button.textContent="＋ Agregar al carrito";
-    button.addEventListener("click",()=>addToCart(product.id));
-
-    info.append(category,name,price,button);
-    card.append(imageBox,info);
-    productGrid.appendChild(card);
-  });
-}
-
-function addToCart(id){
-  const existing=cart.find(item=>item.id===id);
-
-  if(existing){
-    existing.quantity++;
-  }else{
-    cart.push({id,quantity:1});
-  }
-
-  renderCart();
-  showToast("¡Producto agregado al carrito! 💗");
-}
-
-function changeQuantity(id,amount){
-  const item=cart.find(p=>p.id===id);
-  if(!item)return;
-
-  item.quantity+=amount;
-
-  if(item.quantity<=0){
-    cart=cart.filter(p=>p.id!==id);
-  }
-
-  renderCart();
-}
-
-function removeFromCart(id){
-  cart=cart.filter(item=>item.id!==id);
-  renderCart();
-}
-
-function renderCart(){
-  const cartItems=document.getElementById("cartItems");
-  cartItems.innerHTML="";
-
-  const count=cart.reduce((sum,item)=>sum+item.quantity,0);
-
-  document.getElementById("cartCount").textContent=count;
-  document.getElementById("cartTotal").textContent=count+" artículo(s)";
-
-  if(cart.length===0){
-    cartItems.innerHTML=
-      '<p class="empty-message">Tu carrito está vacío. ¡Agrega una creación que te guste! 🌷</p>';
-    return;
-  }
-
-  cart.forEach(item=>{
-    const product=products.find(p=>p.id===item.id);
-    if(!product)return;
-
-    const row=document.createElement("div");
-    row.className="cart-item";
-
-    const img=document.createElement("img");
-    img.src=product.photo;
-    img.alt=product.name;
-    img.onerror=function(){this.style.visibility="hidden"};
-
-    const details=document.createElement("div");
-
-    const title=document.createElement("h3");
-    title.textContent=product.name;
-
-    const category=document.createElement("small");
-    category.textContent="Consultar precio";
-
-    const quantity=document.createElement("div");
-    quantity.className="quantity";
-
-    const minus=document.createElement("button");
-    minus.type="button";
-    minus.textContent="−";
-    minus.setAttribute("aria-label","Disminuir cantidad");
-    minus.addEventListener("click",()=>changeQuantity(product.id,-1));
-
-    const number=document.createElement("span");
-    number.textContent=item.quantity;
-
-    const plus=document.createElement("button");
-    plus.type="button";
-    plus.textContent="+";
-    plus.setAttribute("aria-label","Aumentar cantidad");
-    plus.addEventListener("click",()=>changeQuantity(product.id,1));
-
-    quantity.append(minus,number,plus);
-    details.append(title,category,quantity);
-
-    const remove=document.createElement("button");
-    remove.className="remove-button";
-    remove.type="button";
-    remove.textContent="Quitar";
-    remove.addEventListener("click",()=>removeFromCart(product.id));
-
-    row.append(img,details,remove);
-    cartItems.appendChild(row);
-  });
-}
-
-function openCart(){
-  cartPanel.classList.add("show");
-  overlay.classList.add("show");
-  document.body.style.overflow="hidden";
-}
-
-function closeCart(){
-  cartPanel.classList.remove("show");
-  overlay.classList.remove("show");
-  document.body.style.overflow="";
-}
-
-document.getElementById("openCart").addEventListener("click",openCart);
-document.getElementById("closeCart").addEventListener("click",closeCart);
-overlay.addEventListener("click",closeCart);
-
-document.getElementById("menuButton").addEventListener("click",()=>{
-  document.getElementById("mainNav").classList.toggle("open");
-});
-
-document.querySelectorAll("#mainNav a").forEach(link=>{
-  link.addEventListener("click",()=>{
-    document.getElementById("mainNav").classList.remove("open");
-  });
-});
-
-document.getElementById("orderForm").addEventListener("submit",function(event){
-  event.preventDefault();
-
-  if(cart.length===0){
-    showToast("Primero agrega productos a tu carrito.");
-    return;
-  }
-
-  const name=document.getElementById("customerName").value.trim();
-  const phone=document.getElementById("customerPhone").value.trim();
-  const address=document.getElementById("customerAddress").value.trim();
-  const date=document.getElementById("deliveryDate").value;
-  const notes=document.getElementById("orderNotes").value.trim();
-
-  if(!name||!phone||!address){
-    showToast("Completa los datos obligatorios.");
-    return;
-  }
-
-  let message="🌸 *¡Hola! Quiero realizar una consulta de pedido en ALENA.*\n\n";
-
-  message+="👤 *Nombre:* "+name+"\n";
-  message+="📱 *Teléfono:* "+phone+"\n";
-  message+="📍 *Dirección de entrega:* "+address+"\n";
-  message+="📅 *Fecha deseada:* "+(date||"Por coordinar")+"\n\n";
-
-  message+="🛍️ *Productos seleccionados:*\n";
-
-  cart.forEach(item=>{
-    const product=products.find(p=>p.id===item.id);
-
-    if(product){
-      message+="• "+product.name+
-        " — Cantidad: "+item.quantity+"\n";
+    // Reemplazo individual de foto en modal
+    function triggerSinglePhotoReplace() {
+      if (!selectedProduct) return;
+      replacingProductId = selectedProduct.id;
+      document.getElementById("singlePhotoInput").click();
     }
-  });
 
-  message+="\n💬 *Detalles adicionales:* "+(notes||"Ninguno")+"\n";
-  message+="\n¿Podrían confirmarme los precios y la disponibilidad? ¡Muchas gracias! 💗";
+    document.getElementById("singlePhotoInput").addEventListener("change", (e) => {
+      const file = e.target.files?.[0];
+      if (!file || !replacingProductId) return;
 
-  const whatsappURL=
-    "https://wa.me/"+WHATSAPP_NUMBER+
-    "?text="+encodeURIComponent(message);
+      const prod = PRODUCTS.find(p => p.id === replacingProductId);
+      if (prod) {
+        const url = URL.createObjectURL(file);
+        uploadedImagesMap[prod.img] = url;
+        document.getElementById("modalImg").src = url;
+        renderProducts();
+      }
+    });
 
-  window.open(whatsappURL,"_blank","noopener");
-});
-
-document.getElementById("year").textContent=new Date().getFullYear();
-
-renderCategories();
-renderProducts();
-renderCart();
-</script>
-
+    init();
+  </script>
 </body>
 </html>
-
